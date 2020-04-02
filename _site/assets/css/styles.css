@@ -1,3 +1,9 @@
+body { background: #212121; color: #ebebeb; }
+
+a { color: #ebebeb; }
+
 .current { color: green; }
+
+#footer { padding: 20px; color: #c0c0c0; }
 
 /*# sourceMappingURL=styles.css.map */
