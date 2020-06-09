@@ -1,10 +1,10 @@
-I"�
+I"�
 <h1 id="github-블로그-만들기2">Github 블로그 만들기2</h1>
 
 <h2 id="1-jekyll-구성요소">1. jekyll 구성요소</h2>
 <p>jekyll 다음과 같은 디렉터리 구조를 갖는다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.
 ├── _config.yml
 ├── _data
 │   └── members.yml
