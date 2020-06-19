@@ -1,0 +1,5 @@
+I"�<h1 id="window-운영체제에서-프로세스-찾고-제거하기">window 운영체제에서 프로세스 찾고 제거하기</h1>
+<h2 id="1-프로세스-pid-포함-확인">1. 프로세스 PID 포함 확인</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>netstat -ano  // 맨 마지막 숫자가 PID
+</code></pre></div></div>
+:ET

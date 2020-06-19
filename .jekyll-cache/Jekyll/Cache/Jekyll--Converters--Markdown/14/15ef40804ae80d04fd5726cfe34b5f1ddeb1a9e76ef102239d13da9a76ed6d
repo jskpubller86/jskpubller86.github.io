@@ -1,0 +1,10 @@
+I"C<h1 id="오라클에서-한-달의-일자를-생성하는-쿼리">오라클에서 한 달의 일자를 생성하는 쿼리</h1>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">TO_CHAR</span><span class="p">(</span><span class="n">first_day</span> <span class="o">+</span> <span class="k">LEVEL</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'YYYYMMDD'</span><span class="p">)</span> <span class="n">days</span>
+<span class="k">FROM</span> 
+    <span class="p">(</span><span class="k">SELECT</span> 
+        <span class="n">TRUNC</span><span class="p">(</span><span class="n">SYSDATE</span><span class="p">,</span> <span class="s1">'MM'</span><span class="p">)</span> <span class="n">first_day</span>
+    <span class="k">FROM</span> <span class="n">DUAL</span>
+    <span class="p">)</span>
+<span class="k">CONNECT</span> <span class="k">BY</span> <span class="n">first_day</span> <span class="o">+</span> <span class="k">LEVEL</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">TRUNC</span><span class="p">(</span><span class="n">last_day</span><span class="p">(</span><span class="n">sysdate</span><span class="p">));</span>
+</code></pre></div></div>
+:ET

@@ -1,30 +1,393 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-06-10T10:24:37+09:00</updated><id>/feed.xml</id><entry><title type="html">요청 테스트</title><link href="/2020/04/08/%EC%9A%94%EC%B2%AD-%ED%85%8C%EC%8A%A4%ED%8A%B8.html" rel="alternate" type="text/html" title="요청 테스트" /><published>2020-04-08T00:00:00+09:00</published><updated>2020-04-08T00:00:00+09:00</updated><id>/2020/04/08/%EC%9A%94%EC%B2%AD-%ED%85%8C%EC%8A%A4%ED%8A%B8</id><content type="html" xml:base="/2020/04/08/%EC%9A%94%EC%B2%AD-%ED%85%8C%EC%8A%A4%ED%8A%B8.html">&lt;h1 id=&quot;웹프로젝트에서-request-파라미터-테스트&quot;&gt;웹프로젝트에서 request 파라미터 테스트&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-19T15:00:23+09:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Apach Jmeter</title><link href="http://localhost:4000/2020/06/19/apach-jmeter.html" rel="alternate" type="text/html" title="Apach Jmeter" /><published>2020-06-19T00:00:00+09:00</published><updated>2020-06-19T00:00:00+09:00</updated><id>http://localhost:4000/2020/06/19/apach-jmeter</id><content type="html" xml:base="http://localhost:4000/2020/06/19/apach-jmeter.html">&lt;h1 id=&quot;jmeter-사용법&quot;&gt;jmeter 사용법&lt;/h1&gt;
 
-&lt;p&gt;테스트 환경 : 스프링&lt;/p&gt;
+&lt;h2 id=&quot;1-설치-환경&quot;&gt;1. 설치 환경&lt;/h2&gt;
+&lt;p&gt;window10 x64&lt;/p&gt;
 
-&lt;h2 id=&quot;1-controller-에서-request에-없는-파라미터를-선택시-반환값-확인&quot;&gt;1. Controller 에서 request에 없는 파라미터를 선택시 반환값 확인&lt;/h2&gt;
+&lt;h2 id=&quot;2-jmeter-다운로드&quot;&gt;2. jmeter 다운로드&lt;/h2&gt;
+&lt;p&gt;https://jmeter.apache.org/download_jmeter.cgi 이동&lt;/p&gt;
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getParameter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// null 값 반환&lt;/span&gt;
+&lt;p&gt;Binaries 섹션에서 apache-jmeter-5.3.zip( 현재 작성일 기준 버전) 다운로드&lt;/p&gt;
+
+&lt;h2 id=&quot;3-java-설치&quot;&gt;3. java 설치&lt;/h2&gt;
+&lt;p&gt;Apache JMeter 5.3일 경우 java8+ 설치&lt;/p&gt;
+
+&lt;h2 id=&quot;4-jmeter-설치&quot;&gt;4. jmeter 설치&lt;/h2&gt;
+&lt;p&gt;다운로드 받은 apache-jmeter-5.3.zip 압축해제&lt;/p&gt;
+
+&lt;p&gt;apache-jmeter-5.3\apache-jmeter-5.3\bin 이동&lt;/p&gt;
+
+&lt;p&gt;jmeter.bat 실행&lt;/p&gt;
+
+&lt;h2 id=&quot;5-테스트를-위한-쓰레드-생성&quot;&gt;5. 테스트를 위한 쓰레드 생성&lt;/h2&gt;
+&lt;p&gt;jmeter는 쓰레드를 이용하여 request를 만든다.&lt;/p&gt;
+
+&lt;p&gt;jmeter 화면에서 왼쪽 패널의 Test Plan에서
+마우스 오른쪽 버튼을 클릭하여 나오는 Context menu에서 
+add &amp;gt; Threads(Users) &amp;gt; Thread Group 선택하여 Thread Group을 생성한다.&lt;/p&gt;
+
+&lt;p&gt;Test Plan &amp;gt; Thread Group이 생성되면 
+Thread Group 선택하여 환경 설정을 해주는데 
+주요 환경설정은 그림과 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/develop/apach-jmeter-0.PNG&quot; alt=&quot;jmeter 대체 텍스트&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;여기서 Thread Properties 를 살펴보면&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Number of Threads (users) : 동시 접속자 수&lt;/li&gt;
+  &lt;li&gt;Ramp-up period (seconds) : 몇 초 마다 실행할 것인지&lt;/li&gt;
+  &lt;li&gt;Loop Count : 실행 횟수&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">jmeter 사용법</summary></entry><entry><title type="html">Sql Oracle 날짜 생성 쿼리</title><link href="http://localhost:4000/2020/06/18/sql-oracle-%EB%82%A0%EC%A7%9C-%EC%83%9D%EC%84%B1-%EC%BF%BC%EB%A6%AC.html" rel="alternate" type="text/html" title="Sql Oracle 날짜 생성 쿼리" /><published>2020-06-18T00:00:00+09:00</published><updated>2020-06-18T00:00:00+09:00</updated><id>http://localhost:4000/2020/06/18/sql-oracle-%EB%82%A0%EC%A7%9C%20%EC%83%9D%EC%84%B1%20%EC%BF%BC%EB%A6%AC</id><content type="html" xml:base="http://localhost:4000/2020/06/18/sql-oracle-%EB%82%A0%EC%A7%9C-%EC%83%9D%EC%84%B1-%EC%BF%BC%EB%A6%AC.html">&lt;h1 id=&quot;오라클에서-한-달의-일자를-생성하는-쿼리&quot;&gt;오라클에서 한 달의 일자를 생성하는 쿼리&lt;/h1&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TO_CHAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first_day&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LEVEL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'YYYYMMDD'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;days&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; 
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; 
+        &lt;span class=&quot;n&quot;&gt;TRUNC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SYSDATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'MM'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;first_day&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DUAL&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;CONNECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;first_day&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LEVEL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TRUNC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;last_day&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sysdate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;2-controller-에서받는-request의-데이터-타입-확인&quot;&gt;2. Controller 에서받는 request의 데이터 타입 확인&lt;/h2&gt;
+&lt;h1 id=&quot;오라클에서-원하는-달의-일자를-생성하는-쿼리&quot;&gt;오라클에서 원하는 달의 일자를 생성하는 쿼리&lt;/h1&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TO_CHAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first_day&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LEVEL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'YYYYMMDD'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;days&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; 
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; 
+        &lt;span class=&quot;n&quot;&gt;TRUNC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TO_DATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'20200131235959'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'yyyymmddHH24miss'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'MM'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;first_day&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DUAL&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;CONNECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;first_day&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LEVEL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TRUNC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;last_day&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TO_DATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'20200131235959'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'yyyymmddHH24miss'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">오라클에서 한 달의 일자를 생성하는 쿼리 SELECT TO_CHAR(first_day + LEVEL -1, 'YYYYMMDD') days FROM (SELECT TRUNC(SYSDATE, 'MM') first_day FROM DUAL ) CONNECT BY first_day + LEVEL -1 &amp;lt;= TRUNC(last_day(sysdate));</summary></entry><entry><title type="html">Excel 단축키</title><link href="http://localhost:4000/2020/06/17/excel-%EB%8B%A8%EC%B6%95%ED%82%A4.html" rel="alternate" type="text/html" title="Excel 단축키" /><published>2020-06-17T00:00:00+09:00</published><updated>2020-06-17T00:00:00+09:00</updated><id>http://localhost:4000/2020/06/17/excel-%EB%8B%A8%EC%B6%95%ED%82%A4</id><content type="html" xml:base="http://localhost:4000/2020/06/17/excel-%EB%8B%A8%EC%B6%95%ED%82%A4.html">&lt;h1 id=&quot;1-엑셀-단축키&quot;&gt;1. 엑셀 단축키&lt;/h1&gt;
+&lt;h2 id=&quot;11-시트&quot;&gt;1.1. 시트&lt;/h2&gt;
+&lt;h3 id=&quot;111-시트-이동&quot;&gt;1.1.1. 시트 이동&lt;/h3&gt;
+&lt;p&gt;ctrl + [pgUp or pgDn]&lt;/p&gt;
 
-&lt;h3 id=&quot;21-숫자로-보낼-경우&quot;&gt;2.1. 숫자로 보낼 경우&lt;/h3&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// javascript&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ajax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-     &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;http://localhost:8080/testurl&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-     &lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;na&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;   
+&lt;h2 id=&quot;12-메모&quot;&gt;1.2. 메모&lt;/h2&gt;
+&lt;h3 id=&quot;121-메모-추가&quot;&gt;1.2.1. 메모 추가&lt;/h3&gt;
+&lt;p&gt;shift + f2&lt;/p&gt;
+&lt;h3 id=&quot;122-메모-편집&quot;&gt;1.2.2. 메모 편집&lt;/h3&gt;
+&lt;p&gt;shift + f2&lt;/p&gt;
+&lt;h3 id=&quot;123-메모-삭제&quot;&gt;1.2.3. 메모 삭제&lt;/h3&gt;
+&lt;p&gt;art + r -&amp;gt; d&lt;/p&gt;</content><author><name></name></author><summary type="html">1. 엑셀 단축키 1.1. 시트 1.1.1. 시트 이동 ctrl + [pgUp or pgDn]</summary></entry><entry><title type="html">Develop Log Level</title><link href="http://localhost:4000/2020/06/16/develop-log-level.html" rel="alternate" type="text/html" title="Develop Log Level" /><published>2020-06-16T00:00:00+09:00</published><updated>2020-06-16T00:00:00+09:00</updated><id>http://localhost:4000/2020/06/16/develop-log-level</id><content type="html" xml:base="http://localhost:4000/2020/06/16/develop-log-level.html">&lt;h1 id=&quot;log-level&quot;&gt;Log Level&lt;/h1&gt;
+
+&lt;p&gt;프로그램에서 어떠한 이력을 남기는데 있어 그 수준을 정하는 것&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt;trace&lt;/th&gt;
+      &lt;th&gt;debug&lt;/th&gt;
+      &lt;th&gt;info&lt;/th&gt;
+      &lt;th&gt;warn&lt;/th&gt;
+      &lt;th&gt;error&lt;/th&gt;
+      &lt;th&gt;fatal&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ALL&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;TRACE&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;DEBUG&lt;/td&gt;
+      &lt;td&gt;x&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;INFO&lt;/td&gt;
+      &lt;td&gt;x&lt;/td&gt;
+      &lt;td&gt;x&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;WARN&lt;/td&gt;
+      &lt;td&gt;x&lt;/td&gt;
+      &lt;td&gt;x&lt;/td&gt;
+      &lt;td&gt;x&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ERROR&lt;/td&gt;
+      &lt;td&gt;x&lt;/td&gt;
+      &lt;td&gt;x&lt;/td&gt;
+      &lt;td&gt;x&lt;/td&gt;
+      &lt;td&gt;x&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;FATAL&lt;/td&gt;
+      &lt;td&gt;x&lt;/td&gt;
+      &lt;td&gt;x&lt;/td&gt;
+      &lt;td&gt;x&lt;/td&gt;
+      &lt;td&gt;x&lt;/td&gt;
+      &lt;td&gt;x&lt;/td&gt;
+      &lt;td&gt;o&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;OFF&lt;/td&gt;
+      &lt;td&gt;x&lt;/td&gt;
+      &lt;td&gt;x&lt;/td&gt;
+      &lt;td&gt;x&lt;/td&gt;
+      &lt;td&gt;x&lt;/td&gt;
+      &lt;td&gt;x&lt;/td&gt;
+      &lt;td&gt;x&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name></name></author><summary type="html">Log Level</summary></entry><entry><title type="html">Database Oracle와 Mariadb 비교</title><link href="http://localhost:4000/2020/06/12/database-oracle%EC%99%80-mariadb-%EB%B9%84%EA%B5%90.html" rel="alternate" type="text/html" title="Database Oracle와 Mariadb 비교" /><published>2020-06-12T00:00:00+09:00</published><updated>2020-06-12T00:00:00+09:00</updated><id>http://localhost:4000/2020/06/12/database-oracle%EC%99%80-mariadb-%EB%B9%84%EA%B5%90</id><content type="html" xml:base="http://localhost:4000/2020/06/12/database-oracle%EC%99%80-mariadb-%EB%B9%84%EA%B5%90.html">&lt;h1 id=&quot;oracle와-mariadb-비교&quot;&gt;Oracle와 Mariadb 비교&lt;/h1&gt;
+
+&lt;h2 id=&quot;1-날짜-비교&quot;&gt;1. 날짜 비교&lt;/h2&gt;
+&lt;h3 id=&quot;11-문자열을-날짜로-변환&quot;&gt;1.1. 문자열을 날짜로 변환&lt;/h3&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;tod_date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'20/04/26 13:24:00'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'RR/MM/DD HH24:MI:SS'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;str_to_date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'20/04/26 13:24:00'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'%Y%m%d %H:%i:%s'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// java &lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// @Controller&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getParameter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// error &lt;/span&gt;
+&lt;h2 id=&quot;12-문자열-날짜로-변환2&quot;&gt;1.2. 문자열 날짜로 변환2&lt;/h2&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;tod_date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'20200428000000'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'yyyymmddhh24miss'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;str_to_date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'20200428000000'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'%Y%m%d%H%i%s'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;request로 받아오는 값은 특정 필터를 지정하지 않는 이상 모두 문자열임.&lt;/p&gt;</content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Github Blog</title><link href="/2020/04/08/github-blog.html" rel="alternate" type="text/html" title="Github Blog" /><published>2020-04-08T00:00:00+09:00</published><updated>2020-04-08T00:00:00+09:00</updated><id>/2020/04/08/github-blog</id><content type="html" xml:base="/2020/04/08/github-blog.html">&lt;h1 id=&quot;github-블로그-만들기&quot;&gt;Github 블로그 만들기&lt;/h1&gt;
+
+&lt;h2 id=&quot;13-오늘-일자&quot;&gt;1.3. 오늘 일자&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sysdate&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;NOW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SYSDATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;14-날짜를-문자열로-변환&quot;&gt;1.4. 날짜를 문자열로 변환&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;to_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sysdate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'yyyymmdd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;date_format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'%Y%m%d'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;15-날짜를-문자열로-변환연도-두자리&quot;&gt;1.5. 날짜를 문자열로 변환(연도 두자리)&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;to_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sysdate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'yymm'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;date_format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'%y%m'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;16-날짜를-문자열로-변환초-단위-까지-표시&quot;&gt;1.6. 날짜를 문자열로 변환(초 단위 까지 표시)&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;date_format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'%Y%m%d%f'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;17-miliseconds-표현&quot;&gt;1.7. miliseconds 표현&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;to_timestamp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'initime'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'yyyymmddhh24missFF33'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;str_to_date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'20200509101010999'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'%Y%m%d%H%i%s%f'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;열의&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dateType&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;이&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;시간을&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;지원해야&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;함&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;18-오늘-시간-milliseconds-까지-표현&quot;&gt;1.8. 오늘 시간 milliseconds 까지 표현&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;systimestamp&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;NOW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;19-하루-감소&quot;&gt;1.9. 하루 감소&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sysdate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;DATE_SUB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NOW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INTERVAL&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DAY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;110-하루-증가&quot;&gt;1.10. 하루 증가&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sysdate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;DATE_ADD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NOW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INTERVAL&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DAY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;111-한-달-감소&quot;&gt;1.11. 한 달 감소&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ADD_MONTHS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SYSDATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;DATE_SUB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NOW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INTERVAL&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;MONTH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;112-한-달-증가&quot;&gt;1.12. 한 달 증가&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ADD_MONTHS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SYSDATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;DATE_ADD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NOW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INTERVAL&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;MONTH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;113-일년-감소&quot;&gt;1.13. 일년 감소&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ADD_MONTHS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SYSDATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;or&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;SYSDATE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INTERVAL&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'1'&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;YEAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;DATE_SUB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NOW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INTERVAL&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;YEAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;114-일년-증가&quot;&gt;1.14. 일년 증가&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ADD_MONTHS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SYSDATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;or&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;SYSDATE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INTERVAL&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'1'&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;YEAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;DATE_ADD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NOW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INTERVAL&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;YEAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;115-일-단위-미만-버림-시-분-초-00으로-만듬&quot;&gt;1.15. 일 단위 미만 버림 (시, 분, 초 00으로 만듬)&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;TRUNC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ADD_MONTHS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SYSDATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'dd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;DATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DATE_SUB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NOW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INTERVAL&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;YEAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;116-한달-이전을-하고-하루-추가-그리고-일단위-미만-버림&quot;&gt;1.16. 한달 이전을 하고 하루 추가 그리고 일단위 미만 버림&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;TRUNC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ADD_MONTHS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SYSDATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'dd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;DATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DATE_ADD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DATE_SUB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NOW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INTERVAL&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;MONTH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INTERVAL&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DAY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;117-문자를-숫자로-변환&quot;&gt;1.17. 문자를 숫자로 변환&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;TO_NUMBER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'11'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;CAST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'11'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;SIGNED&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;118-패팅-문자열&quot;&gt;1.18. 패팅 문자열&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;LPAD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'0'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;LPAD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'0'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;119-문자열-결합&quot;&gt;1.19. 문자열 결합&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;'브'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'피'&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;CONCAT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'브'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'피'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;120-16진수-10진수로-변환&quot;&gt;1.20. 16진수 10진수로 변환&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;TO_NUMBER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HEXTORAW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'aabbbbbb'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;CONV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'aabbbbbb'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;121-조건문&quot;&gt;1.21. 조건문&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;DECODE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;amt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;amt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;CASE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHEN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;amt&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IS&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;THEN&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;ELSE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;amt&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;END&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;122-null-조건&quot;&gt;1.22. NULL 조건&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;NVL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;curtask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;IFNULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;curtask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;122-시퀀스-증가&quot;&gt;1.22. 시퀀스 증가&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oracle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sequence_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NEXTVAL&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mariadb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;NEXTVAL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sequence_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">Oracle와 Mariadb 비교</summary></entry><entry><title type="html">Ide 이클립스에서 제우스 환경구축</title><link href="http://localhost:4000/2020/06/12/ide-%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4%EC%97%90%EC%84%9C-%EC%A0%9C%EC%9A%B0%EC%8A%A4-%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95.html" rel="alternate" type="text/html" title="Ide 이클립스에서 제우스 환경구축" /><published>2020-06-12T00:00:00+09:00</published><updated>2020-06-12T00:00:00+09:00</updated><id>http://localhost:4000/2020/06/12/ide-%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4%EC%97%90%EC%84%9C-%EC%A0%9C%EC%9A%B0%EC%8A%A4-%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95</id><content type="html" xml:base="http://localhost:4000/2020/06/12/ide-%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4%EC%97%90%EC%84%9C-%EC%A0%9C%EC%9A%B0%EC%8A%A4-%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95.html">&lt;h1 id=&quot;이클립에서-jeus-환경-구축&quot;&gt;이클립에서 jeus 환경 구축&lt;/h1&gt;
+
+&lt;p&gt;먼저 티멕소프트에서 원하는 버전의 제우스 설치 파일을 다운로드 받는다. 
+https://technet.tmaxsoft.com/ko/front/download/findDownloadList.do?cmProductCode=0101&lt;/p&gt;
+
+&lt;p&gt;이후 제우스 플러그인 섹션에서 이클립스와 연동할 수 있는 JEUS Eclipse Plugin for JEUS[버전]  파일을 다운로드 받는다.&lt;/p&gt;
+
+&lt;p&gt;두 파일을 다운로드 후 제우스를 먼저 설치한다.&lt;/p&gt;
+
+&lt;p&gt;설치가 끝나면 이클립스를 실행 후  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;help&amp;gt; new install software&lt;/code&gt;에서  제우스 프러그인을 추가하고 설치를 실행한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/develop/ide-eclipse-jeus-plugin-0.PNG&quot; alt=&quot;install software&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;설치가 끝나고 이클립스 재시작 안내가 나오면 재시작하여 설치를 완료하고  servers 패널에서 new를 실행하면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tmax&lt;/code&gt; 카테고리에서 원하는 버전의 jeus 버전을 선택할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;선택을 하게 되면 서버 생성화면이 나오게 되는데 이 화면에서 
+jeus를 설치할 때 입력했던 username과 password를 입력하면 된다.&lt;/p&gt;</content><author><name></name></author><summary type="html">이클립에서 jeus 환경 구축</summary></entry><entry><title type="html">Window 프로세스_찾고_제거하기</title><link href="http://localhost:4000/2020/06/09/window-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4_%EC%B0%BE%EA%B3%A0_%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0.html" rel="alternate" type="text/html" title="Window 프로세스_찾고_제거하기" /><published>2020-06-09T00:00:00+09:00</published><updated>2020-06-09T00:00:00+09:00</updated><id>http://localhost:4000/2020/06/09/window-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4_%EC%B0%BE%EA%B3%A0_%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/2020/06/09/window-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4_%EC%B0%BE%EA%B3%A0_%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0.html">&lt;h1 id=&quot;window-운영체제에서-프로세스-찾고-제거하기&quot;&gt;window 운영체제에서 프로세스 찾고 제거하기&lt;/h1&gt;
+&lt;h2 id=&quot;1-프로세스-pid-포함-확인&quot;&gt;1. 프로세스 PID 포함 확인&lt;/h2&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;netstat -ano  // 맨 마지막 숫자가 PID
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;2-특정-포트로-실행하는-프로세스-pid-확인&quot;&gt;2. 특정 포트로 실행하는 프로세스 PID 확인&lt;/h2&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;netstat -ano | find &quot;80&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;3-찾은-프로세스-종료하기&quot;&gt;3. 찾은 프로세스 종료하기&lt;/h2&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;taskkill /f /pid [찾은 pid 번호]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">window 운영체제에서 프로세스 찾고 제거하기 1. 프로세스 PID 포함 확인 netstat -ano // 맨 마지막 숫자가 PID</summary></entry><entry><title type="html">Linux 모니터링 팁</title><link href="http://localhost:4000/2020/05/13/linux-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%ED%8C%81.html" rel="alternate" type="text/html" title="Linux 모니터링 팁" /><published>2020-05-13T00:00:00+09:00</published><updated>2020-05-13T00:00:00+09:00</updated><id>http://localhost:4000/2020/05/13/linux-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%ED%8C%81</id><content type="html" xml:base="http://localhost:4000/2020/05/13/linux-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%ED%8C%81.html">&lt;h1 id=&quot;tail-명령어를-이용한-실시간-라인-출력&quot;&gt;tail 명령어를 이용한 실시간 라인 출력&lt;/h1&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ tail -f [파일이름]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;grep-명령어를-이용하여-특정-문구가-있는-라인만-출력&quot;&gt;grep 명령어를 이용하여 특정 문구가 있는 라인만 출력&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ tail -f [파일이름] | grep '[찾을 문자열]'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">tail 명령어를 이용한 실시간 라인 출력</summary></entry><entry><title type="html">Java 소켓통신</title><link href="http://localhost:4000/2020/04/20/java-%EC%86%8C%EC%BC%93%ED%86%B5%EC%8B%A0.html" rel="alternate" type="text/html" title="Java 소켓통신" /><published>2020-04-20T00:00:00+09:00</published><updated>2020-04-20T00:00:00+09:00</updated><id>http://localhost:4000/2020/04/20/java-%EC%86%8C%EC%BC%93%ED%86%B5%EC%8B%A0</id><content type="html" xml:base="http://localhost:4000/2020/04/20/java-%EC%86%8C%EC%BC%93%ED%86%B5%EC%8B%A0.html">&lt;h1 id=&quot;소켓통신&quot;&gt;소켓통신&lt;/h1&gt;
+&lt;p&gt;우리가 클라이이언트랑 서버랑 통신할려고 할때 통신하는 방법은 두가지 정도가 있다. 
+하나는 http 통신이고 다른 하나는 소켓 통신이다. 
+http 통신과 소켓 통신의 차이는 http 통신은 한 번의 요청과 응답이 끝나면 연결을 종료하는 반면 소켓통신은 어떤 조건에 의해서 종료되지 않는 이상 연결을 지속할 수 있다. 
+또한 양방향 통신이기 때문에 클라이언트가 서버로 요청하는 것 이외에 반대로 서버가 클라이언트로 요청을 줄 수도 있다.&lt;/p&gt;
+
+&lt;h1 id=&quot;구현&quot;&gt;구현&lt;/h1&gt;
+&lt;p&gt;먼저 소켓 통신을 구현해 보겠다.&lt;/p&gt;</content><author><name></name></author><summary type="html">소켓통신 우리가 클라이이언트랑 서버랑 통신할려고 할때 통신하는 방법은 두가지 정도가 있다. 하나는 http 통신이고 다른 하나는 소켓 통신이다. http 통신과 소켓 통신의 차이는 http 통신은 한 번의 요청과 응답이 끝나면 연결을 종료하는 반면 소켓통신은 어떤 조건에 의해서 종료되지 않는 이상 연결을 지속할 수 있다. 또한 양방향 통신이기 때문에 클라이언트가 서버로 요청하는 것 이외에 반대로 서버가 클라이언트로 요청을 줄 수도 있다.</summary></entry><entry><title type="html">Github Blog</title><link href="http://localhost:4000/2020/04/08/github-blog.html" rel="alternate" type="text/html" title="Github Blog" /><published>2020-04-08T00:00:00+09:00</published><updated>2020-04-08T00:00:00+09:00</updated><id>http://localhost:4000/2020/04/08/github-blog</id><content type="html" xml:base="http://localhost:4000/2020/04/08/github-blog.html">&lt;h1 id=&quot;github-블로그-만들기&quot;&gt;Github 블로그 만들기&lt;/h1&gt;
 
 &lt;p&gt;Github에서는 회원에게 웹호스팅과 도메인을 각각 한 개씩 제공한다. 
 이를 이용하기 위해서는 먼저 저장소를 만들어야 하는데 웹호스팅을 할 수 있는 저장소의 이름은 회원아이디를 이용하여 생성해야 한다.&lt;/p&gt;
@@ -102,96 +465,4 @@ jekyll serve &lt;span class=&quot;c&quot;&gt;# http://localhost:4000 에 배포�
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;현재 index.html 을 위와 같이 생성한 상태에서 터미널을 열고 빌드와 배포를 하면 
  http://localhost:4000 주소에서 “Hello World!” 를 확인 할 수 있다.
-배포한 상태에서 파일을 수정하게 되면 수정한 내용이 반영된다.&lt;/p&gt;</content><author><name></name></author><summary type="html">Github 블로그 만들기</summary></entry><entry><title type="html">Github Blog2</title><link href="/2020/04/08/github-blog2.html" rel="alternate" type="text/html" title="Github Blog2" /><published>2020-04-08T00:00:00+09:00</published><updated>2020-04-08T00:00:00+09:00</updated><id>/2020/04/08/github-blog2</id><content type="html" xml:base="/2020/04/08/github-blog2.html">&lt;h1 id=&quot;1-콘텐츠-구성&quot;&gt;1. 콘텐츠 구성&lt;/h1&gt;
-&lt;p&gt;jekyll 에서는 콘텐츠를 구성할 때 6가지 기법을 사용한다.&lt;/p&gt;
-&lt;h2 id=&quot;11-pages&quot;&gt;1.1 Pages&lt;/h2&gt;
-&lt;p&gt;가장 기본적인 방법으로 독립적인 콘텐츠를 구성한다.&lt;/p&gt;
-
-&lt;p&gt;현재 프레임워크에서 root 경로에 html 파일 추가하여 만들수 있으며 
-디렉터리와 함께 구성할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;또한 .md 확장자 파일을 만들면 html을 자동으로 변환해 준다.&lt;/p&gt;
-
-&lt;p&gt;접근 경로는 root 경로 사이트의 호스트 주소이므로 다음과 같이 접근할 수 있다.&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├──about.md     &lt;span class=&quot;c&quot;&gt;# http://example.com/about.html&lt;/span&gt;
-├──index.html   &lt;span class=&quot;c&quot;&gt;# http://example.com/&lt;/span&gt;
-├──contact.html &lt;span class=&quot;c&quot;&gt;# http://example.com/contact.html&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;만약 사이트에 많은 페이지가 있어야 한다면 하위 폴더를 만들어 분리 할 수 있다.&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-├── about.md          &lt;span class=&quot;c&quot;&gt;# =&amp;gt; http://example.com/about.html&lt;/span&gt;
-├── documentation     &lt;span class=&quot;c&quot;&gt;# folder containing pages&lt;/span&gt;
-│   └── doc1.md       &lt;span class=&quot;c&quot;&gt;# =&amp;gt; http://example.com/documentation/doc1.html&lt;/span&gt;
-├── design            &lt;span class=&quot;c&quot;&gt;# folder containing pages&lt;/span&gt;
-│   └── draft.md      &lt;span class=&quot;c&quot;&gt;# =&amp;gt; http://example.com/design/draft.html&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;111-url-변경&quot;&gt;1.1.1. URL 변경&lt;/h3&gt;
-&lt;p&gt;만약  URL 에서 접근 경로를 실제 경로와 다르게 하고 싶다면 Front Matter에 permalinks를 설정해 주면 된다.&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;permalink: /about/
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;12-posts&quot;&gt;1.2. Posts&lt;/h2&gt;
-&lt;p&gt;jekyll은 당신이 필요한 곳에 블로그 글을 제공해준다.&lt;/p&gt;
-
-&lt;h3 id=&quot;121-posts-folder&quot;&gt;1.2.1 Posts Folder&lt;/h3&gt;
-&lt;p&gt;_posts 폴더는 블로그 글이 있는 곳이다.&lt;/p&gt;
-
-&lt;p&gt;기본적으로 Markdown, HTML은 지원한다.&lt;/p&gt;
-&lt;h3 id=&quot;122-posts-생성&quot;&gt;1.2.2 Posts 생성&lt;/h3&gt;
-&lt;p&gt;Posts를 만들기 위해서는 _posts 디렉터리를 생성하고  다음과 같은 형식으로 파일을 생성해야 한다.&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;YEAR-MONTH-DAY-title.MARKUP
-&lt;span class=&quot;c&quot;&gt;# YEAR는 4자리 연도 &lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# MONTH 2자리&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# DAY 2자리 &lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위 형식으로 만든 파일은 다음과 같다.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2011-09-01-how-to-write-a-blog.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;블로그 파일에는 반드시 front matter를 명시하여 layout 메타 데이터를 추가해줘야한다. 
-기본적으로 post를 명시한다.&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
-layout: post
-title:  &quot;Welcome to Jekyll!&quot;
----
-
-# Welcome
-
-**Hello world**, this is my first Jekyll blog post.
-
-I hope you like it!
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;123-이미지-및-자원-포함시키기&quot;&gt;1.2.3 이미지 및 자원 포함시키기&lt;/h3&gt;
-&lt;p&gt;블로그에 이미지 파일이나 자원을 포함시킬 경우 root 디렉터리에 assets 폴더를 만들고 그 안에 이미지, 파일, 또는 다른 자원을 저장하고 다음과 같은 경로로 포함시킬수 있다.&lt;/p&gt;
-&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;... which is shown in the screenshot below:
-&lt;span class=&quot;p&quot;&gt;![&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;My helpful screenshot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;/assets/screenshot.jpg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;pdf의 경우 다운로드 받는다.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;... you can [get the PDF](/assets/mydoc.pdf) directly.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;124-게시물-목록-구성&quot;&gt;1.2.4 게시물 목록 구성&lt;/h3&gt;
-&lt;p&gt;다른 페이지에서 Liquid 태그를 사용하면 손쉽게 게시물 목록을 구성할 수 있다.&lt;/p&gt;
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
-  
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/2020/04/08/%EC%9A%94%EC%B2%AD-%ED%85%8C%EC%8A%A4%ED%8A%B8.html&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;요청 테스트&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-  
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/2020/04/08/github-blog2.html&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Github Blog2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-  
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/2020/04/08/github-blog.html&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Github Blog&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-  
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;125-tags-and-categories&quot;&gt;1.2.5 Tags and Categories&lt;/h3&gt;</content><author><name></name></author><summary type="html">1. 콘텐츠 구성 jekyll 에서는 콘텐츠를 구성할 때 6가지 기법을 사용한다. 1.1 Pages 가장 기본적인 방법으로 독립적인 콘텐츠를 구성한다.</summary></entry></feed>
+배포한 상태에서 파일을 수정하게 되면 수정한 내용이 반영된다.&lt;/p&gt;</content><author><name></name></author><summary type="html">Github 블로그 만들기</summary></entry></feed>

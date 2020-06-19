@@ -1,4 +1,4 @@
-I"�
+I"�!
 <h1 id="1-콘텐츠-구성">1. 콘텐츠 구성</h1>
 <p>jekyll 에서는 콘텐츠를 구성할 때 6가지 기법을 사용한다.</p>
 <h2 id="11-pages">1.1 Pages</h2>
@@ -78,7 +78,43 @@ I hope you like it!
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ul&gt;</span>
   
     <span class="nt">&lt;li&gt;</span>
-      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2020/04/08/%EC%9A%94%EC%B2%AD-%ED%85%8C%EC%8A%A4%ED%8A%B8.html"</span><span class="nt">&gt;</span>요청 테스트<span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2020/06/19/apach-jmeter.html"</span><span class="nt">&gt;</span>Apach Jmeter<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2020/06/18/sql-oracle-%EB%82%A0%EC%A7%9C-%EC%83%9D%EC%84%B1-%EC%BF%BC%EB%A6%AC.html"</span><span class="nt">&gt;</span>Sql Oracle 날짜 생성 쿼리<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2020/06/17/excel-%EB%8B%A8%EC%B6%95%ED%82%A4.html"</span><span class="nt">&gt;</span>Excel 단축키<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2020/06/16/develop-log-level.html"</span><span class="nt">&gt;</span>Develop Log Level<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2020/06/12/ide-%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4%EC%97%90%EC%84%9C-%EC%A0%9C%EC%9A%B0%EC%8A%A4-%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95.html"</span><span class="nt">&gt;</span>Ide 이클립스에서 제우스 환경구축<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2020/06/12/database-oracle%EC%99%80-mariadb-%EB%B9%84%EA%B5%90.html"</span><span class="nt">&gt;</span>Database Oracle와 Mariadb 비교<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2020/06/09/window-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4_%EC%B0%BE%EA%B3%A0_%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0.html"</span><span class="nt">&gt;</span>Window 프로세스_찾고_제거하기<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2020/05/13/linux-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%ED%8C%81.html"</span><span class="nt">&gt;</span>Linux 모니터링 팁<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2020/04/20/java-%EC%86%8C%EC%BC%93%ED%86%B5%EC%8B%A0.html"</span><span class="nt">&gt;</span>Java 소켓통신<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2020/04/08/java-%EC%9A%94%EC%B2%AD-%ED%85%8C%EC%8A%A4%ED%8A%B8.html"</span><span class="nt">&gt;</span>Java 요청 테스트<span class="nt">&lt;/a&gt;</span>
     <span class="nt">&lt;/li&gt;</span>
   
     <span class="nt">&lt;li&gt;</span>
