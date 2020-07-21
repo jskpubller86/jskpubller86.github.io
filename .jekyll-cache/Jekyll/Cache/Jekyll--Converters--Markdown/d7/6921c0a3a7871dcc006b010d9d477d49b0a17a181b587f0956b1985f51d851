@@ -1,9 +1,0 @@
-I"d<h1 id="tail-명령어를-이용한-실시간-라인-출력">tail 명령어를 이용한 실시간 라인 출력</h1>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ tail -f [파일이름]
-</code></pre></div></div>
-<h2 id="grep-명령어를-이용하여-특정-문구가-있는-라인만-출력">grep 명령어를 이용하여 특정 문구가 있는 라인만 출력</h2>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ tail -f [파일이름] | grep '[찾을 문자열]'
-</code></pre></div></div>
-:ET
