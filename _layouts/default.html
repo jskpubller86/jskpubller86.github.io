@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="_iB0P_2AgykYussuCI9vlDK_rkiNFrmt_NA_V8ZQ2Sk" />
     <title>{{page.title}}</title>
+    <link rel="stylesheet" href="/assets/plugin/bootstrap-4.5.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <script src="/assets/plugin/jquery/jquery.min.js"></script>
+        <script src="/assets/plugin/bootstrap-4.5.2-dist/js/bootstrap.bundle.min.js"></script>
     {% feed_meta %}
     {% seo %}
     {% if jekyll.environment == "production" %}
@@ -14,9 +17,9 @@
 </head>
 <body>
     {% include navigation.html %}
-    <section>
-    {{content}}
-    </section>
+    <div id="container" class="container-fluid">
+        {{content}}
+    </div>
     {% include footer.html %}
 </body>
 </html>
