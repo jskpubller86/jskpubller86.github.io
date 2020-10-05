@@ -17,7 +17,7 @@ Apache JMeter 5.3일 경우 java8+ 설치
 
 apache-jmeter-5.3\apache-jmeter-5.3\bin 이동
 
-jmeter.bat 또는 ApacheJMeter
+jmeter.bat 또는 ApacheJMeter 실행
 
 ## 5. 테스트 플랜 작성
 jemeter는 쓰레드를 이용하여 테스트를 실행한다. 
@@ -26,11 +26,13 @@ jmeter 화면에서 왼쪽 패널의 Test Plan에서
 마우스 오른쪽 버튼을 클릭하여 나오는 Context menu에서 
 `add > Threads(Users) > Thread Group` 선택하여 Thread Group을 생성한다. 
 
+![jmeter 대체 텍스트](../../assets/images/develop/apach-jmeter-0.PNG)
+
 `Test Plan > Thread Group`이 생성되면 
 Thread Group 선택하여 환경 설정을 해주는데 
 주요 환경설정은 그림과 같다.
 
-![jmeter 대체 텍스트](../../../assets/images/develop/apach-jmeter-0.PNG)
+![jmeter 대체 텍스트](../../assets/images/develop/apach-jmeter-1.PNG)
 
 1. Name : thread group 이름 
 2. Comments : thread group 설명
@@ -38,7 +40,7 @@ Thread Group 선택하여 환경 설정을 해주는데
     
     Sampler 즉 테스트 수행시 에러가 발생할 경우 취할 행동
     - continue : 에러가 발생해도 테스트를 수행한다.
-    - Start Next Thread Loop : 에러가 발생시 쓰레드의 다음 반복을 시작한다.
+    - Start Next Thread Loop : 에러가 발생시 쓰레드의 다음 반복을 시작한다. 
     - Stop Thread : 에러가 발생한 thread를 멈춘다. 
     - Stop Test : 테스트를 멈춘다. 
     - Stop Test Now : 테스트를 당장 멈춘다.
