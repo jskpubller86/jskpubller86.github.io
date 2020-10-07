@@ -44,7 +44,13 @@
 
     -- INCREMENT AND MINVALUE AND MAXVALUE 
     CREATE SEQUENCE my_seq INCREMENT 10 MINVALUE 10 MAXVALUE 10;
-
 ~~~
+<br>
 
-
+## 2. 세션 확인
+~~~sql 
+show variables like '%max_connect%';
+~~~
+* __extra_max_connections__ : 
+* __max_connect_errors__ : 최대 연결 오류 수
+* __max_connections__ : 최대 연결 수
