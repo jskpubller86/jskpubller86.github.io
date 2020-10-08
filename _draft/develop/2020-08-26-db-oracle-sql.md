@@ -5,7 +5,7 @@
 SELECT * FROM v$resource_limit WHERE resource_name IN ( 'processes', 'sessions', 'transactions');
 ~~~
 
-* __CURRENT_UTILIZATION__ : 현재 SESSION 수
+* __CURRENT_UTILIZATION__ : 현재 SESSION 접속 수
 * __MAX_UTILZATION__ : MAX SESSION 수 (최대 접속했던 SESSION를 의미)
 
 * __INITIAL_ALLOCATION__ : PROCESS에 따라 책정된 SESSION 수
