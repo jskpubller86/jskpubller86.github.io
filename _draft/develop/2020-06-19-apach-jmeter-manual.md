@@ -112,7 +112,40 @@ Test Plan의 context menu 에서 ADD > Config Element > CSV Data Set Config 선�
      - __All threads__ : 모든 쓰레드 공유
      - __Current thread group__ : 현재 쓰레드 그룹 공유
      - __Current thread__ : 현재 쓰레드만 공유
-4. 
+<br><br>
+
+## 8. jmeter 구조와 범위 
+JMeter는 구조에 따라 적용 범위가 달라진다. 
+
+만약 두 개의 request가 있을 경우 각각의 request 밑에 csv 설정 파일이 있고 csv 파일의 변수 명이 같다고 하더라도 csv의 변수 범위는 상위 계층인 Request에 한정되기 때문에 겹치지 않는다. 
+
+~~~cmd
+test plan
+
+  - thread group
+  
+      - request1
+         - csv file1
+         
+      - request2
+        - csv file2
+~~~
+
+상위 계층의 csv 파일에 변수 명과 하위 계층의 csv파일의 변수 명이 겹칠 경우 
+
+마지막 하위 계층의 변수 값을 적용한다.
+
+~~~cmd
+test plan
+  - csv file0
+  - thread group
+  
+      - request1
+         - csv file1
+         
+      - request2
+        - csv file2
+~~~
 
 
 
