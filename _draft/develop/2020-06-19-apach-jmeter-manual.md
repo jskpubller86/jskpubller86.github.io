@@ -87,7 +87,19 @@ HTTP Request의 옵션은 다음과 같다.
 
 <br><br>
 
-## 7. 동적인 값을 이용한 테스트
+## 7. Listener 생성
+
+sampler 작성을 완료하였다면 sampler 결과를 확인하기 위해서 Listener를 생성해야 한다.
+
+마찬가지로 Test Plan > Thread Group에서 오른쪽 마우스를 클릭하여 context menu에서 
+`Add > Listener > view Results Tree` 를 선택한다. 
+
+![jmeter Listener](../../assets/images/develop/apach-jmeter-menual-4.PNG)
+
+
+<br><br>
+
+## 8. 동적인 값을 이용한 테스트
 먼저 동적으로 만들 텍스트 파일을 생성한다. 
 
 각각의 인자값은 comma(,)로 구분하고 각 쓰레드당 할당될 인자값 그룹은 CRLF 로 구분한다. 
@@ -114,7 +126,8 @@ Test Plan의 context menu 에서 ADD > Config Element > CSV Data Set Config 선�
      - __Current thread__ : 현재 쓰레드만 공유
 <br><br>
 
-## 8. jmeter 구조와 범위 
+
+## 9. jmeter 구조와 범위 
 JMeter는 구조에 따라 적용 범위가 달라진다. 
 
 만약 두 개의 request가 있을 경우 각각의 request 밑에 csv 설정 파일이 있고 csv 파일의 변수 명이 같다고 하더라도 csv의 변수 범위는 상위 계층인 Request에 한정되기 때문에 겹치지 않는다. 
@@ -131,7 +144,7 @@ test plan
         - csv file2
 ~~~
 
-상위 계층의 csv 파일에 변수 명과 하위 계층의 csv파일의 변수 명이 겹칠 경우 
+상위 계층의 csv 파일에 변수 명과 하위 계층의 csv 파일의 변수 명이 겹칠 경우 
 
 마지막 하위 계층의 변수 값을 적용한다.
 
