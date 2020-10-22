@@ -1,18 +1,18 @@
 # jmeter 사용법
+<br/>
 
 ## 1. 설치 환경
 window10 x64
+<br/><br/>
 
 ## 2. jmeter 다운로드
 https://jmeter.apache.org/download_jmeter.cgi 이동
 
 Binaries 섹션에서 apache-jmeter-5.3.zip( 현재 작성일 기준 버전) 다운로드
-
 <br/><br/>
 
 ## 3. java 설치
 Apache JMeter 5.3일 경우 java8+ 설치
-
 <br/><br/>
 
 ## 4. jmeter 설치 
@@ -21,6 +21,7 @@ Apache JMeter 5.3일 경우 java8+ 설치
 apache-jmeter-5.3\apache-jmeter-5.3\bin 이동
 
 jmeter.bat 또는 ApacheJMeter 실행
+<br/><br/>
 
 ## 5. 테스트 플랜 작성
 jemeter는 쓰레드를 이용하여 테스트를 실행한다. 
@@ -29,13 +30,13 @@ jmeter 화면에서 왼쪽 패널의 Test Plan에서
 마우스 오른쪽 버튼을 클릭하여 나오는 Context menu에서 
 `add > Threads(Users) > Thread Group` 선택하여 Thread Group을 생성한다. 
 
-![jmeter 대체 텍스트](../../assets/images/develop/apach-jmeter-menual-0.PNG)
+![jmeter 대체 텍스트](/assets/images/develop/apach-jmeter-menual-0.png)
 
 `Test Plan > Thread Group`이 생성되면 
 Thread Group 선택하여 환경 설정을 해주는데 
 주요 환경설정은 그림과 같다.
 
-![jmeter Thread Group](../../assets/images/develop/apach-jmeter-menual-1.PNG)
+![jmeter Thread Group](/assets/images/develop/apach-jmeter-menual-1.PNG)
 
 1. __Name__ : thread group 이름 
    
@@ -58,6 +59,7 @@ Thread Group 선택하여 환경 설정을 해주는데
      - __Same user on each iteration__ : 반복을 수행했을 때 동일한 사용자(세션 아이디) 또는 다른 사용자(세션 아이디)로 수행할 것인지를 설정. 
      - __Delay Thread creation until needed__ : 활성화 되어 있으면 Ramp-up period 옵션에 지정한 시간에 Thread를 생성한다. 비활성화 되어 있으면 미리 쓰레드를 생성한 후 정지 상태로 만든 후 Ramp-up period 옵션에 지정한 시간에 쓰레드를 깨운다.
      - __Specify Thread lifetime__ :
+<br/><br/>
 
 ## 6. Sampler 생성
 thread를 설정했다면 thread를 이용하여 수행할 Sampler를 작성해야한다. 
@@ -67,11 +69,11 @@ thread를 설정했다면 thread를 이용하여 수행할 Sampler를 작성해�
 
 Sampler에는 여러 종류가 있는데 그 중에서 HTTP Request 선택한다. 
 
-![jmeter Sampler](../../assets/images/develop/apach-jmeter-menual-2.PNG)
+![jmeter Sampler](/assets/images/develop/apach-jmeter-menual-2.PNG)
 
 HTTP Request의 옵션은 다음과 같다. 
 
-![jmeter HTTP Request](../../assets/images/develop/apach-jmeter-menual-3.PNG)
+![jmeter HTTP Request](/assets/images//develop/apach-jmeter-menual-3.PNG)
 
 1. __Name__
 2. __Comments__
@@ -84,7 +86,6 @@ HTTP Request의 옵션은 다음과 같다.
    * __HTTP Request__ : get, post, put 등의 HTTP 요청 방식
      - __content encoding__ : 인코디 방식 (euc-kr, utf-8, ...)
 4. Advanced : 추가 설정 
-
 <br><br>
 
 ## 7. Listener 생성
@@ -94,9 +95,7 @@ sampler 작성을 완료하였다면 sampler 결과를 확인하기 위해서 Li
 마찬가지로 Test Plan > Thread Group에서 오른쪽 마우스를 클릭하여 context menu에서 
 `Add > Listener > view Results Tree` 를 선택한다. 
 
-![jmeter Listener](../../assets/images/develop/apach-jmeter-menual-4.PNG)
-
-
+![jmeter Listener](/jskpubller86.github.io/_site/assets/images/develop/apach-jmeter-menual-4.PNG)
 <br><br>
 
 ## 8. 동적인 값을 이용한 테스트
@@ -126,29 +125,27 @@ Test Plan의 context menu 에서 ADD > Config Element > CSV Data Set Config 선�
      - __Current thread__ : 현재 쓰레드만 공유
 <br><br>
 
-
 ## 9. jmeter 구조와 범위 
 JMeter는 구조에 따라 적용 범위가 달라진다. 
 
 만약 두 개의 request가 있을 경우 각각의 request 밑에 csv 설정 파일이 있고 csv 파일의 변수 명이 같다고 하더라도 csv의 변수 범위는 상위 계층인 Request에 한정되기 때문에 겹치지 않는다. 
 
-~~~cmd
+~~~
 test plan
-
-  - thread group
+   - thread group
   
-      - request1
+       - request1
          - csv file1
          
-      - request2
-        - csv file2
+       - request2
+         - csv file2
 ~~~
 
 상위 계층의 csv 파일에 변수 명과 하위 계층의 csv 파일의 변수 명이 겹칠 경우 
 
 마지막 하위 계층의 변수 값을 적용한다.
 
-~~~cmd
+~~~
 test plan
   - csv file0
   - thread group
@@ -159,11 +156,6 @@ test plan
       - request2
         - csv file2
 ~~~
-
-
-
-
-
 
 
 
