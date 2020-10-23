@@ -23,8 +23,16 @@ apache-jmeter-5.3\apache-jmeter-5.3\bin 이동
 jmeter.bat 또는 ApacheJMeter 실행
 <br/><br/>
 
-## 5. 테스트 플랜 작성
-jemeter는 쓰레드를 이용하여 테스트를 실행한다. 
+## 5. Test Plan 이름 작성 
+Test Plan을 구성하기 전에 Test Plan의 이름을 작성할 수 있다.
+
+![jmeter test plan 이름 작성](/assets/images/develop/apach-jmeter-menual-plan-name.png)
+
+이름을 Http test라고 작성한 후 저장을 하면 plan의 이름이 변경되는 것을 확인할 수 있다.
+
+![jmeter test plan 이름 작성 완료](/assets/images/develop/apach-jmeter-menual-plan-name-complete.png)
+
+jemeter는 쓰레드(thread)를 이용하여 테스트(test)를 실행한다. 
 
 jmeter 화면에서 왼쪽 패널의 Test Plan에서
 마우스 오른쪽 버튼을 클릭하여 나오는 Context menu에서 
@@ -32,36 +40,19 @@ jmeter 화면에서 왼쪽 패널의 Test Plan에서
 
 ![jmeter 대체 텍스트](/assets/images/develop/apach-jmeter-menual-0.png)
 
-`Test Plan > Thread Group`이 생성되면 
-Thread Group 선택하여 환경 설정을 해주는데 
-주요 환경설정은 그림과 같다.
+`Test Plan > Thread Group`이 생성되면 아래 그림과 같은 설정화면을 볼 수 있다.
 
 ![jmeter Thread Group](/assets/images/develop/apach-jmeter-menual-1.PNG)
+<br><br>
 
-1. __Name__ : thread group 이름 
-   
-2. __Comments__ : thread group 설명
-   
-3. __Action to be taken after a Sampler error__  
-    Sampler 즉 테스트 수행시 에러가 발생할 경우 취할 행동
-    - __continue__ : 에러가 발생해도 테스트를 수행한다.
-    - __Start Next Thread Loop__ : 에러가 발생시 쓰레드의 다음 반복을 시작한다. 
-    - __Stop Thread__ : 에러가 발생한 thread를 멈춘다. 
-    - __Stop Test__ : 테스트를 멈춘다. 
-    - __Stop Test Now__ : 테스트를 당장 멈춘다.
-  
-4. __Thread Properties__ : 쓰레드 설정
-   - __Number of Threads (users)__ : 몇 개의 쓰레드를 생성할지 설정.
-   - __Ramp-up period (seconds)__ : 쓰레드를 깨우고 시작하는 시간이다. 
-  
-      만약 쓰레드가 10개, Ramp-up period를  1로 설정하면 이전 쓰레드가 시작된 후 (1/10)초 단위로 쓰레드를 깨우고 실행한다.
-   - __Loop Count__ : 실행 횟수
-     - __Same user on each iteration__ : 반복을 수행했을 때 동일한 사용자(세션 아이디) 또는 다른 사용자(세션 아이디)로 수행할 것인지를 설정. 
-     - __Delay Thread creation until needed__ : 활성화 되어 있으면 Ramp-up period 옵션에 지정한 시간에 Thread를 생성한다. 비활성화 되어 있으면 미리 쓰레드를 생성한 후 정지 상태로 만든 후 Ramp-up period 옵션에 지정한 시간에 쓰레드를 깨운다.
-     - __Specify Thread lifetime__ :
+## 6. Thread Group 생성
+jmeter에서 test를 수행하기 위해서는 thread가 필요하다.
+
+Test Plan에서 오른쪽 마우스를 클릭하여 contextmenu를 활성화 한 후 `Add > Threads (Users) > Thread Group`을 선택한다.
+![jmeter Thread Group](/assets/images/develop/apach-jmeter-menual-create-thread-group.PNG)
 <br/><br/>
 
-## 6. Sampler 생성
+## 7. Sampler 생성
 thread를 설정했다면 thread를 이용하여 수행할 Sampler를 작성해야한다. 
 
 생성된 thread group에 오른쪽 마우스 클릭을 하여 contextmenu를 활성하고 
@@ -95,7 +86,7 @@ sampler 작성을 완료하였다면 sampler 결과를 확인하기 위해서 Li
 마찬가지로 Test Plan > Thread Group에서 오른쪽 마우스를 클릭하여 context menu에서 
 `Add > Listener > view Results Tree` 를 선택한다. 
 
-![jmeter Listener](/jskpubller86.github.io/_site/assets/images/develop/apach-jmeter-menual-4.PNG)
+![jmeter Listener](/assets/images/develop/apach-jmeter-menual-4.PNG)
 <br><br>
 
 ## 8. 동적인 값을 이용한 테스트
@@ -105,7 +96,7 @@ sampler 작성을 완료하였다면 sampler 결과를 확인하기 위해서 Li
 
 동적 파라미터를 담은 텍스트 파일을 만든 후 
 
-Test Plan의 context menu 에서 ADD > Config Element > CSV Data Set Config 선택한다. 
+Test Plan의 context menu 에서 `ADD > Config Element > CSV Data Set Config` 선택한다. 
 
 환경설정 옵션은 다음과 같다. 
 1. __Name__
@@ -123,6 +114,11 @@ Test Plan의 context menu 에서 ADD > Config Element > CSV Data Set Config 선�
      - __All threads__ : 모든 쓰레드 공유
      - __Current thread group__ : 현재 쓰레드 그룹 공유
      - __Current thread__ : 현재 쓰레드만 공유
+
+
+csv 파일 
+
+
 <br><br>
 
 ## 9. jmeter 구조와 범위 
