@@ -38,7 +38,7 @@ jmeter 화면에서 왼쪽 패널의 Test Plan에서
 마우스 오른쪽 버튼을 클릭하여 나오는 Context menu에서 
 `add > Threads(Users) > Thread Group` 선택하여 Thread Group을 생성한다. 
 
-![jmeter 대체 텍스트](/assets/images/develop/apach-jmeter-menual-0.png)
+![jmeter 대체 텍스트](../../assets/images/develop/apach-jmeter-menual-0.png)
 
 `Test Plan > Thread Group`이 생성되면 아래 그림과 같은 설정화면을 볼 수 있다.
 
