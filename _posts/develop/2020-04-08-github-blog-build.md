@@ -75,13 +75,14 @@ Gemfile과 Gemfile.lock 이 생성되었으면 준비는 끝났다.
 
 jekll은 빌드를 통해 정적파일을 생성한다.
 
-빌드를 하기 위해서는 다음 두 명령어를 사용한다 .
+빌드를 하기 위해서는 다음 두 명령어를 사용한다.
+
 ```bash
 jekyll build  # 해당 명령어로 빌드를 하게 되면 _site 라는 폴더에 정적파일들을 생성한다.
-jekyll serve # http://localhost:4000 에 배포하며 파일에 변경사항이 있을 http://localhost:4000 에 반영한다.
+jekyll serve # http://localhost:4000  서버를 실행한다.
 ```
 현재 index.html 을 위와 같이 생성한 상태에서 터미널을 열고 빌드와 배포를 하면 
- http://localhost:4000 주소에서 "Hello World!" 를 확인 할 수 있다.
+http://localhost:4000 주소에서 "Hello World!" 를 확인 할 수 있다.
 배포한 상태에서 파일을 수정하게 되면 수정한 내용이 반영된다. 
 
 

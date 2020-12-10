@@ -1,4 +1,10 @@
-## 1. 세션 확인
+---
+title : 마리아디비 세션 정보 (MARIADB SESSION INFO) 확인
+---
+
+마리아디비에서 variables를 이용하면 시스템 변수들 (system variables)을 확인할 수 있다.  
+
+그 중에서 세션의 설정 상태를 확인하려면 다음과 같은 쿼리를 실행한다.
 
 ~~~sql 
     show 
@@ -10,7 +16,9 @@
 * __max_connect_errors__ : 최대 연결 오류 수
 * __max_connections__ : 최대 연결 수
 * __max_user_connections__ : 계정당 커넥션 수 
-  
+
+
+현재 세션의 연결 상태를 확인하려면 다음의 쿼리를 실행한다.
 ~~~sql 
     show 
         status 
@@ -22,4 +30,4 @@
 * __Aborted_connects__ : 연결 과정 중 fail된 연결 수
 * __Connections__ : 연결 시도된 총 수
 * __Max_used_connections__ : 동시 최대 접속자 수
-* __Threads_connected__ : 현재 오픈된 연결 수
+* __Threads_connected__ : 현재 연결 접속자 수
