@@ -1,5 +1,12 @@
-# jmeter preprocessor
+---
+title : JSR223 PreProcessor
+---
+
 preprocessor는 sampler가 수행되기 전에 사용자가 정의한 로직을 처리한다.
+
+실습 환경 
+1. java 설치
+2. jmeter 설치
 <br><br>
 
 ## 1. JSR223 PreProcessor
@@ -34,14 +41,16 @@ vars.put("param", "value");
 <br><br>
 
 ### 1.3. 로그 출력
+
 JSR223 PreProcessor에서 어떤 값을 확인할 경우 log를 사용하여 출력할 수 있다. 
 
 ~~~
 log.info("출력할 내용");
 ~~~
-<br><br>
+<br>
 
 ## 2. 변수 값 호출 
+
 preprocessor에서 할당한 변수를 사용하기 위해서는 Jmeter에서 기본적으로 변수를 호출하는 방식으로 호출한다.
 
 ~~~
