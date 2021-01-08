@@ -1,6 +1,10 @@
+---
+title : 
+---
+
 ## 1. processes, sessions, transactions 확인 
 ~~~sql
-SELECT * FROM v$resource_limit WHERE resource_name IN ( 'processes', 'sessions', 'transactions');
+	SELECT * FROM v$resource_limit WHERE resource_name IN ( 'processes', 'sessions', 'transactions');
 ~~~
 
 * __CURRENT_UTILIZATION__ : 현재 SESSION 접속 수
