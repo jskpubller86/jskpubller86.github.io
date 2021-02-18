@@ -1,4 +1,9 @@
-# 오라클에서 한 달의 일자를 생성하는 쿼리
+---
+title : 계층적인 날짜 구조 생성
+---
+
+## 오라클에서 원하는 달의 일자를 생성하는 쿼리
+
 ~~~sql
 SELECT TO_CHAR(first_day + LEVEL -1, 'YYYYMMDD') days
 FROM 
@@ -9,7 +14,8 @@ FROM
 CONNECT BY first_day + LEVEL -1 <= TRUNC(last_day(sysdate));
 ~~~
 
-# 오라클에서 원하는 달의 일자를 생성하는 쿼리
+__예)__
+
 ~~~sql
 SELECT TO_CHAR(first_day + LEVEL -1, 'YYYYMMDD') days
 FROM 

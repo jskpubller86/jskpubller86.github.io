@@ -1,29 +1,39 @@
-# jmeter 사용법
-<br/>
+---
+title : jemeter manual
+---
 
 ## 1. 설치 환경
+
 window10 x64
-<br/><br/>
+
+<br>
 
 ## 2. jmeter 다운로드
+
 https://jmeter.apache.org/download_jmeter.cgi 이동
 
 Binaries 섹션에서 apache-jmeter-5.3.zip( 현재 작성일 기준 버전) 다운로드
-<br/><br/>
+
+<br>
 
 ## 3. java 설치
+
 Apache JMeter 5.3일 경우 java8+ 설치
-<br/><br/>
+
+<br>
 
 ## 4. jmeter 설치 
+
 다운로드 받은 apache-jmeter-5.3.zip 압축해제
 
 apache-jmeter-5.3\apache-jmeter-5.3\bin 이동
 
 jmeter.bat 또는 ApacheJMeter 실행
-<br/><br/>
+
+<br>
 
 ## 5. Test Plan 이름 작성 
+
 Test Plan을 구성하기 전에 Test Plan의 이름을 작성할 수 있다.
 
 ![jmeter test plan 이름 작성](/assets/images/develop/apach-jmeter-menual-plan-name.png)
@@ -34,16 +44,15 @@ Test Plan을 구성하기 전에 Test Plan의 이름을 작성할 수 있다.
 
 jemeter는 쓰레드(thread)를 이용하여 테스트(test)를 실행한다. 
 
-jmeter 화면에서 왼쪽 패널의 Test Plan에서
-마우스 오른쪽 버튼을 클릭하여 나오는 Context menu에서 
-`add > Threads(Users) > Thread Group` 선택하여 Thread Group을 생성한다. 
+jmeter 화면에서 왼쪽 패널의 Test Plan에 마우스 오른쪽 버튼을 클릭하여 나오는 Context menu에서 `add > Threads(Users) > Thread Group` 선택하여 Thread Group을 생성한다. 
 
 ![jmeter 대체 텍스트](../../assets/images/develop/apach-jmeter-menual-0.png)
 
 `Test Plan > Thread Group`이 생성되면 아래 그림과 같은 설정화면을 볼 수 있다.
 
 ![jmeter Thread Group](/assets/images/develop/apach-jmeter-menual-1.PNG)
-<br><br>
+
+<br>
 
 ## 6. Thread Group 생성
 jmeter에서 test를 수행하기 위해서는 thread가 필요하다.
