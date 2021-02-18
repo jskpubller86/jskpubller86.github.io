@@ -87,6 +87,8 @@ oracle에서 현재 sequence의 번호를 알고 싶을 경우 다음과 같은 
 
 `[! 주의] seq_user.CURRVAL은 현재 session에서 증가한 sequence 값을 보여준다. 즉 다른 session에서 sequence를 증가시켜 12로 만들고 현재 session 사용자가 seq_user.CURRVAL을 통해 확인을 하면 12가 아닌 11을 보게 된다.`
 
+<br>
+
 ## 2.4. sequence 마지막 값 확인
 
 ~~~sql
