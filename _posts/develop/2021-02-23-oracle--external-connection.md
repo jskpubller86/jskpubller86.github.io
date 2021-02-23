@@ -1,4 +1,6 @@
-# 오라클 외부 접속 방법
+---
+title : 오라클 외부 접속 방법
+---
  
 게스트에 오라클 XE를 설치한 후 윈도우 방화벽 인바운드 규칙에서 오라클 서비스 포트를 허용하고 호스트에서 sqldeveloper 툴을 이용하여 게스트에 설치된 오라클에 접속을 시도하면 무한정 기다리게 되는 경우가 있다. 
 
@@ -15,6 +17,7 @@
 윈도우 10 기준으로 `C:\app\[userName]\product\18.0.0\dbhomeXE\network\admin` 으로 이동하면 listener.ora, tnsnaems.ora  파일이 있다. 
 
 이 두 파일을 열어보면 각각의 파일에서 해당 부분을 찾을 수 있다. 
+
 ~~~
     # listener.ora
     LISTNER = 
