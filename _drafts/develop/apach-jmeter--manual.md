@@ -55,13 +55,17 @@ jmeter 화면에서 왼쪽 패널의 Test Plan에 마우스 오른쪽 버튼을 
 <br>
 
 ## 6. Thread Group 생성
+
 jmeter에서 test를 수행하기 위해서는 thread가 필요하다.
 
 Test Plan에서 오른쪽 마우스를 클릭하여 contextmenu를 활성화 한 후 `Add > Threads (Users) > Thread Group`을 선택한다.
+
 ![jmeter Thread Group](/assets/images/develop/apach-jmeter-menual-create-thread-group.PNG)
-<br/><br/>
+
+<br>
 
 ## 7. Sampler 생성
+
 thread를 설정했다면 thread를 이용하여 수행할 Sampler를 작성해야한다. 
 
 생성된 thread group에 오른쪽 마우스 클릭을 하여 contextmenu를 활성하고 
@@ -86,19 +90,21 @@ HTTP Request의 옵션은 다음과 같다.
    * __HTTP Request__ : get, post, put 등의 HTTP 요청 방식
      - __content encoding__ : 인코디 방식 (euc-kr, utf-8, ...)
 4. Advanced : 추가 설정 
-<br><br>
+
+<br>
 
 ## 7. Listener 생성
 
 sampler 작성을 완료하였다면 sampler 결과를 확인하기 위해서 Listener를 생성해야 한다.
 
-마찬가지로 Test Plan > Thread Group에서 오른쪽 마우스를 클릭하여 context menu에서 
-`Add > Listener > view Results Tree` 를 선택한다. 
+마찬가지로 Test Plan > Thread Group에서 오른쪽 마우스를 클릭하여 context menu에서 `Add > Listener > view Results Tree` 를 선택한다. 
 
 ![jmeter Listener](/assets/images/develop/apach-jmeter-menual-4.PNG)
-<br><br>
+
+<br>
 
 ## 8. 동적인 값을 이용한 테스트
+
 먼저 동적으로 만들 텍스트 파일을 생성한다. 
 
 각각의 인자값은 comma(,)로 구분하고 각 쓰레드당 할당될 인자값 그룹은 CRLF 로 구분한다. 
@@ -108,6 +114,7 @@ sampler 작성을 완료하였다면 sampler 결과를 확인하기 위해서 Li
 Test Plan의 context menu 에서 `ADD > Config Element > CSV Data Set Config` 선택한다. 
 
 환경설정 옵션은 다음과 같다. 
+
 1. __Name__
 2. __Comments__
 3. __Configure the CSV Data Source__
@@ -124,13 +131,12 @@ Test Plan의 context menu 에서 `ADD > Config Element > CSV Data Set Config` �
      - __Current thread group__ : 현재 쓰레드 그룹 공유
      - __Current thread__ : 현재 쓰레드만 공유
 
-
 csv 파일 
 
-
-<br><br>
+<br>
 
 ## 9. jmeter 구조와 범위 
+
 JMeter는 구조에 따라 적용 범위가 달라진다. 
 
 만약 두 개의 request가 있을 경우 각각의 request 밑에 csv 설정 파일이 있고 csv 파일의 변수 명이 같다고 하더라도 csv의 변수 범위는 상위 계층인 Request에 한정되기 때문에 겹치지 않는다. 

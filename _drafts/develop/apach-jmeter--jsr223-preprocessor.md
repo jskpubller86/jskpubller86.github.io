@@ -11,7 +11,6 @@ preprocessor는 sampler가 수행되기 전에 사용자가 정의한 로직을 
 
 <br>
 
-
 ## 1. JSR223 PreProcessor
 
 JSR223 PreProcessor는 JSR 223 API를 이용한 언어들을 사용하여 전처리를 할 수 있는 전처리기이다. 
@@ -39,13 +38,13 @@ PreProcessor는 변수 값을 받거나 또는 전달하기 위해 변수 vars�
 변수 값을 가져오기 위해서는 get 메서드를 사용한다.
 
 ~~~
-vars.get("param");
+	vars.get("param");
 ~~~
 
 변수 값을 할당하기 위해서는 put 메서드를 사용한다.
 
 ~~~
-vars.put("param", "value");
+	vars.put("param", "value");
 ~~~
 
 <br>
@@ -55,7 +54,7 @@ vars.put("param", "value");
 JSR223 PreProcessor에서 어떤 값을 확인할 경우 log를 사용하여 출력할 수 있다. 
 
 ~~~
-log.info("출력할 내용");
+	log.info("출력할 내용");
 ~~~
 
 <br>
@@ -65,5 +64,5 @@ log.info("출력할 내용");
 preprocessor에서 할당한 변수를 사용하기 위해서는 Jmeter에서 기본적으로 변수를 호출하는 방식으로 호출한다.
 
 ~~~
-${param}
+	${param}
 ~~~
