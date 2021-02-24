@@ -1,5 +1,6 @@
 ---
 title : 계층적인 날짜 구조 생성
+categories : sql oracle
 ---
 
 ## 오라클에서 원하는 달의 일자를 생성하는 쿼리

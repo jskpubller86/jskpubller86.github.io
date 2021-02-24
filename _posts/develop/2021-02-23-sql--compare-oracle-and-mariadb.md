@@ -1,5 +1,6 @@
 ---
 title: Oracle와 Mariadb 비교
+category : sql
 ---
 
 ## 1. 날짜 비교 

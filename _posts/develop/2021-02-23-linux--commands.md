@@ -1,5 +1,6 @@
 ---
 title : 리눅스 명령어
+category : linux
 ---
 
 ## 1. tail 명령어

@@ -1,5 +1,6 @@
 ---
-title: window 운영체제에서 프로세스 찾고 제거하기 
+title : window 운영체제에서 프로세스 찾고 제거하기 
+categories : window cmd
 ---
 
 ## 1. 프로세스 PID 포함 확인

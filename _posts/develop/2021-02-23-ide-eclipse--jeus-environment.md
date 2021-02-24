@@ -1,5 +1,6 @@
 ---
 title : 이클립에서 jeus 환경 구축
+categories : ide eclipse
 ---
 
 먼저 티멕소프트에서 원하는 버전의 제우스 설치 파일을 다운로드 받는다. 

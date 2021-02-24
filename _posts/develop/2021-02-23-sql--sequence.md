@@ -1,5 +1,6 @@
 ---
 title : oracle sequence  생성 및 관리
+category : sql
 ---
 
 ## 1. 시퀀스 생성 (Create sequence)

@@ -1,5 +1,6 @@
 ---
 title : Github 블로그 만들기
+category : github
 --- 
 
 Github에서는 회원에게 웹호스팅과 도메인을 각각 한 개씩 제공한다. 
