@@ -4,38 +4,63 @@ title : Blog
 ---
 
 <div class="row">
-	<div class="col">
+	<div class="col-3">
         <h3>Categories</h3>
-		{% for category in site.data.categories %}
-			<div class="col">
-				<h4>{{ category.name }}</h4>
-				{% for post in site.posts %}
-					{% if post.categories.size == 1 and post.categories contains category.name %}
-						<li>
-							<a href="{{ post.url }}">{{ post.title }}</a>
-						</li>	
-					{% endif %}
-				{% endfor %}
-
+		<ul id ="categories" class="list-group list-group-flush">
+			{% for category in site.data.categories %}
+			<li class="list-group-item list-group-item-dark">
+				<a href="#list" data-name="{{category.name}}">{{ category.name }}</a>
 				{% if category.sub %}
+				<ul class="list-group list-group-flush">
 					{% for category2 in category.sub %}
-						<div class="col">
-							<h5>{{category2.name}}</h5>
-							<ul>
-							{% for post in site.posts %}
-								{% assign ctName = {{category.name | append : category2.name}} %}
-								{% assign pCtName =  {{post.categories | join : ""}} %}
-								{% if post.categories.size == 2 and  pCtName contains ctName %}
-								<li>
-									<a href="{{ post.url }}">{{ post.title }}</a>
-								</li>
-								{% endif %}	
-							{% endfor %}
-							</ul>
-						</div>
+						<li class="list-group-item list-group-item-dark">
+							<a href="#list" data-name="{{category.name}}{{category2.name}}">{{category2.name}}</a>
+						</li>
 					{% endfor %}
+				</ul>
 				{% endif %}
-			</div>
-		{% endfor %}
+			</li>
+			{% endfor %}
+		</ul>
     </div>
+
+	<div class="col-9">
+		<div id="list">
+
+		</div>
+	</div>
 </div>
+
+<script>
+$('#categories').find('#button').click(function(){
+	var ctName = $(this).data('name');
+	var html = '<ul id="list-group">';
+		
+	html += '</ul>';
+		
+});
+</script>
+
+<!--
+<ul id="list-group">
+{% for post in site.posts %}
+	{% if post.categories.size == 1 and post.categories contains category.name %}
+	<li>
+		<a href="{{ post.url }}">{{ post.title }}</a>
+	</li>	
+	{% endif %}
+{% endfor %}
+</ul>
+
+<ul>
+{% for post in site.posts %}
+	{% assign ctName = {{category.name | append : category2.name}} %}
+	{% assign pCtName =  {{post.categories | join : ""}} %}
+	{% if post.categories.size == 2 and  pCtName contains ctName %}
+	<li>
+		<a href="{{ post.url }}">{{ post.title }}</a>
+	</li>
+	{% endif %}	
+{% endfor %}
+</ul>
+-->
