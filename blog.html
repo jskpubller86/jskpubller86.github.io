@@ -5,15 +5,13 @@ title : Blog
 
 <div class="row">
 	<div class="col">
-		{% assign cats = [[],[],[],[]] %}
-		{% for post in site.posts %}
-			{{post.categories[0]}} <br>
-			{% cats[0][]  %}		
-		{% endfor %}
-		{{ cats }}
-    </div>
+   </div>
 </div>
 
 <script>
-	console.log();
+	var cats;
+	'{% for post in site.posts %}';
+	cats = '{{post.categories[0]}}';
+	'{% endfor %}';
+	
 </script>
