@@ -10,8 +10,12 @@ title : Blog
 
 <script>
 	var cats;
+	// post의 첫 번째 카테고리를 얻고 배열로 변환한다.
 	'{% for post in site.posts %}';
-	cats = '{{post.categories[0]}}';
+	cats += ('{{post.categories[0] | json}}' + ',');
+	console.log(cats);
 	'{% endfor %}';
-	
+
+
+	conosole.log(cats2);
 </script>
