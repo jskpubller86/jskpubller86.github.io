@@ -1,5 +1,6 @@
 ---
 title : MARIADB 사용자 관리
+categories : db mariadb sql
 ---
 
 실습환경 :

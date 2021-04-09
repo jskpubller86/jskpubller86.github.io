@@ -1,5 +1,6 @@
 ---
-title : 
+title : session 확인
+categories : db oracle sql
 ---
 
 ## 1. processes, sessions, transactions 확인 

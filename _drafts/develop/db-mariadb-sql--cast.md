@@ -1,3 +1,8 @@
+---
+title : mariadb cast function
+categories : db mariadb sql
+---
+
 ## 1. CAST로 문자열로 된 숫자 변환
 문자열로 "123"이 되어 있을 경우 숫자형 123으로 변환할 수 있다. 
 ~~~sql

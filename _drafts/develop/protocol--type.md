@@ -1,4 +1,8 @@
-# 프로토콜의 종류
+---
+title : 프로토콜의 종류
+categories : protocol
+---
+
 1. FTP(file transfer protocol) : 
     
     클라이언트와 서버 간에 파일을 주고받기 위해 만든 통신 규약.

@@ -1,5 +1,6 @@
 ---
 title : oracle user 생성 및 권한 부여
+categories : db oracle sql
 ---
 ## 1. create user 
 

@@ -1,4 +1,8 @@
-# Window10 ISO 파일 다운로드 방법
+---
+title : Window10 ISO 파일 다운로드 방법
+categories: window
+---
+
 1. chrome 브라우저 실행
 2. https://www.microsoft.com/ko-kr/software-download/windows10 로 접속
 3. 개발자 도구 활성화 

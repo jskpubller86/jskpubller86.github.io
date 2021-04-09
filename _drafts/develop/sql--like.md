@@ -1,6 +1,8 @@
 ---
 title : like query 사용법
+categories : sql
 ---
+
 ## 1. LIKE 쿼리
 
 LIKE 지정한 문자열이 포함된 레코드를 반환한다.

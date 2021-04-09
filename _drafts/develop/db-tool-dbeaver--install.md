@@ -1,3 +1,8 @@
+---
+title : DBeaver 
+categories : db tool dbeaver
+---
+
 # 디비버(DBeaver)
 디비버(DBeaver)는 무료로 제공되는 데이터베이스(database) 관리 툴이며 다양한 플랫폼(platform)을 지원한다. 
 

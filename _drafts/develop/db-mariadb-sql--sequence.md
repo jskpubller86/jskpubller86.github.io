@@ -1,3 +1,8 @@
+---
+title : MARIADB SEQUENCE
+categories : db mariadb sql
+---
+
 
 ## 1. 시퀀스 생성 (TO CREATE SEQUENCE), MIN VERSION 10.3
 

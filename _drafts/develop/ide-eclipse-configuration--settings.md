@@ -1,4 +1,8 @@
-# 이클립스 환경설정
+---
+title : 이클립스 환경설정
+categories : ide eclipse configuration
+---
+
 ## 1. 이클립스에 탭, 공백 표시 
 window > preferences > General > Editors > Text Editors 로 이동 후 
 

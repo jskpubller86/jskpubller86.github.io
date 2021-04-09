@@ -1,6 +1,6 @@
 ---
 title : jdbc PreProcessor
-categories : apache/jmeter
+categories : apache jmeter
 ---
 
 preprocessor는 sampler가 수행되기 전에 사용자가 정의한 로직을 처리한다.

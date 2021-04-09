@@ -1,6 +1,6 @@
 ---
 title : Jekyll Blog Install
-category : jekyll blog
+categories : jekyll blog
 --- 
 
 ## 1. Ruby 설치 

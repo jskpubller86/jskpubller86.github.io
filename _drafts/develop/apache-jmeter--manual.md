@@ -1,5 +1,6 @@
 ---
 title : jemeter manual
+categories : apache jmeter
 ---
 
 ## 1. 설치 환경

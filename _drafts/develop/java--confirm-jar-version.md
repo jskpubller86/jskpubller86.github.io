@@ -1,4 +1,7 @@
-# 자바 아카이브(jar) 버전(version) 확인하는 방법
+---
+title : 자바 아카이브(jar) 버전(version) 확인하는 방법
+categories : java
+---
 
 ## 1. 명령 프롬프트(prompt)에서 확인하는 방법
 ~~~cmd

@@ -1,5 +1,6 @@
 ---
 title: oracle sql 날짜 계층 출력
+categories : db oracle sql
 ---
 
 ## 1. 날짜 계층 출력

@@ -1,5 +1,6 @@
 ---
 title : 마리아디비 세션 정보 (MARIADB SESSION INFO) 확인
+categories : db mariadb sql
 ---
 
 마리아디비에서 variables를 이용하면 시스템 변수들 (system variables)을 확인할 수 있다.  

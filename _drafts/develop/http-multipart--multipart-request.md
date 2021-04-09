@@ -1,4 +1,8 @@
-# Multipart 
+---
+title : Multipart
+categories : http multipart
+---
+
 멀티파트는 이미지 파일과 같은 바이너리 형태의 데이터를 전달 하기 위해서 사용하는 타입니다. 
 
 html에서는 form 태그에서 enctype에 multipart/form-data를 선언한다. 
@@ -13,8 +17,9 @@ html에서는 form 태그에서 enctype에 multipart/form-data를 선언한다.
 </form> 
 ~~~
 
-이미지를 추가하고 form 태그의 submit 버튼을 클릭하게 되면  다음과 같은 요청정보를 얻을 수 있다. 
+<br>
 
+이미지를 추가하고 form 태그의 submit 버튼을 클릭하게 되면  다음과 같은 요청정보를 얻을 수 있다. 
 
 ~~~
 POST http://localhost:9999/web02/FileUploadServlet HTTP/1.1
@@ -51,10 +56,14 @@ Content-Disposition: form-data; name="description"
 
 ~~~
 
+<br>
+
 요청정보를 보면 Content-Type 속성이  multipart/form-data 이고 boundary 값이 ----WebKitFormBoundaryjNGZbjZRLEmm8YjM 값으로 되어 있는 것을 확인할 수가 있다. 
 
 이 값은 파트의 구분자라 하며 여러 개의 매개변수를 구분하는데 사용된다. 
+
 파트 구분자의 끝은 하이픈 두 개를 추가하여 표시한다. 
+
 ~~~
 ------WebKitFormBoundary9NKeKg5J81yPYYTP--
 ~~~

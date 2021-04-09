@@ -1,7 +1,11 @@
-# mimeType
+---
+title : mimeType
+categories : http mime
+---
+
 마임타입(mimeType)은 클라이언트(client)에게 문서의 다양성을 알려주기 위한 메커니즘이다.
 
-## 마임타입(mimeType)의 종류
+## 1. 마임타입(mimeType)의 종류
 
 | file         | mime               |
 |--------------|--------------------|

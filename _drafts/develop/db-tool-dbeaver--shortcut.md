@@ -1,3 +1,8 @@
+---
+titles : DBEAVER 단축키
+categories : db tool dbeaver
+---
+
 ## 1. 세로 블록 선택
 ~~~
 alt + shift + a
