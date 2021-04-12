@@ -10,10 +10,8 @@ a {color: rgb(235, 235, 235);}
     padding: 20px;
     color: #c0c0c0;
 }
-
-
-#container {
-	
-}
-
 td, th {padding: 10px;border: 1px solid #eee;}
+
+.card .list-group-item a {
+	color:rgb(0, 0, 0)
+}

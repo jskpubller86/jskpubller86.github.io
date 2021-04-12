@@ -4,35 +4,32 @@ title : Blog
 ---
 <div class="row">
     <div class="col">
-		
+		<div class="accordion" id="accordionExample">
 		{% for category in site.categories %}
-			<div>
-				<!--
-				<a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample{{category[0]}}" role="button" aria-expanded="false" aria-controls="collapseExample">
-					{{ category[0] }}
-				</a>
-				-->
-
-				<div>
-					<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#{{category[0]}}" aria-expanded="false" aria-controls="collapseExample">
-						{{ category[0] }}
-					</button>
+			<div class="card">
+				<div class="card-header" id="headingOne">
+					<h2 class="mb-0">
+						<a class="btn btn-link btn-block text-left" data-toggle="collapse" href="#{{category[0]}}" role="button" aria-expanded="false" aria-controls="{{category[0]}}">
+							{{ category[0] }}
+						</a>
+					</h2>
 				</div>
 
 				<div class="collapse" id="{{category[0]}}">
 					<div class="card card-body">
-						<ul>
+						<ul class="list-group list-group-flush">
 							{% for post in category[1] %}
-								<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+								<li class="list-group-item"><a href="{{ post.url }}">{{ post.title }}</a></li>
 							{% endfor %}
 						</ul>
 					</div>
 				</div>
 			</div>
 		{% endfor %}
+		</div>
     </div>
 </div>
 
 <script>
-// $('.collapse').collapse();
+
 </script>
