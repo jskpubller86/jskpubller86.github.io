@@ -8,6 +8,12 @@ categories : hotkey finder mac
 command + ↑ 
 
 
+### 2 환경설정 열기
+
+command  + ,
+
+
+
 
 
 
