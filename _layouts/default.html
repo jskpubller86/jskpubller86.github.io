@@ -1,25 +1,42 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="google-site-verification" content="_iB0P_2AgykYussuCI9vlDK_rkiNFrmt_NA_V8ZQ2Sk" />
-    <title>{{page.title}}</title>
-    <link rel="stylesheet" href="/assets/plugin/bootstrap-4.5.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <script src="/assets/plugin/jquery/jquery.min.js"></script>
-    <script src="/assets/plugin/bootstrap-4.5.2-dist/js/bootstrap.bundle.min.js"></script>
-    {% feed_meta %}
-    {% seo %}
-    {% if jekyll.environment == "production" %}
-        <script src=""></script>
-    {% endif %}
-    
-</head>
-<body>
-    {% include navigation.html %}
-    <div id="container" class="container-fluid">
-        {{content}}
+---
+---
+
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+  </head>
+
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+    {% include_cached skip-links.html %}
+    {% include_cached browser-upgrade.html %}
+    {% include_cached masthead.html %}
+
+    <div class="initial-content">
+      {{ content }}
     </div>
-    {% include footer.html %}
-</body>
+
+    {% if site.search == true %}
+      <div class="search-content">
+        {% include_cached search/search_form.html %}
+      </div>
+    {% endif %}
+
+    <div id="footer" class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include_cached footer.html %}
+      </footer>
+    </div>
+
+    {% include scripts.html %}
+
+  </body>
 </html>
