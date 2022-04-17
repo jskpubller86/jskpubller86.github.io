@@ -16,7 +16,7 @@ minimal_mistakes_skin    :  "dark" #"air", "aqua", "default", "contrast",  "dirt
 
 # Site Settings
 locale                   : "en-US"
-title                    : "처음 개발하는 것처럼"
+title                    : "처음처럼"
 title_separator          : "|"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "JS KIM"
@@ -102,11 +102,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "K-Debugger"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
+  bio              : "버그를 싫어하는 개발자"
   location         : "Somewhere"
-  email            :
+  email            : jskpublle86@gmail.com
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
