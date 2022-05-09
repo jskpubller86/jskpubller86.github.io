@@ -1,7 +1,11 @@
 ---
 title : JAVA에서 HEX를 숫자 값으로 변경하기
-category : java
+category : java convert hex
 ---
+
+자바에서는 HEX 값을 변경하는 방법을 여러가지 지원한다.
+
+그 중 몇가지를 알아보자.
 
 ## 1. Integer class를 이용한 방법
 
