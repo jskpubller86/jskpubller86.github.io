@@ -94,7 +94,6 @@ SELECT FLOOR(15.4) FROM DUAL; // 15
 ### 1.5. 
 
 
-
 ## 2. General Comparison Functions
 
 ### 2.1. GREATEST() 함수
