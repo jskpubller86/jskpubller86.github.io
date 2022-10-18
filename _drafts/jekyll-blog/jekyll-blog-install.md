@@ -46,3 +46,6 @@ ruby 설치 이후 gem 명령어를 이용하여 bundler와 jekyll 패키지를 
 
 
 
+
+
+
