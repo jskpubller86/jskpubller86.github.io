@@ -212,7 +212,7 @@ public class Sample2 {
 }
 
 public class Sample {
-	public void setValue(String param) throws CustomException { // CustomException이 있지만 호출한 것에 처리를 하도록 요청 또는 발생할 수 있음을 명시
+	public void setValue(String param) { // 굳이 여기서 throw CustomException을 할 필요가 없음.
 		Sample2 sample2 = new Sample2();
 		sample2.setValue(param);
 	}
