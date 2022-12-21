@@ -15,6 +15,8 @@ categories : db oracle grant 권한
 GRANT INSERT ON [TABLE NAME] TO [USER];
 ```
 
+<br>
+
 ### 1.2. SELECT 권한
 
 특정 사용자에게 데이터 조회 권한을 부여한다.
@@ -22,6 +24,8 @@ GRANT INSERT ON [TABLE NAME] TO [USER];
 ```sql
 GRANT SELECT ON [TABLE NAME] TO [USER];
 ```
+
+<br>
 
 ### 1.3. DELETE 권한
 
@@ -31,6 +35,8 @@ GRANT SELECT ON [TABLE NAME] TO [USER];
 GRANT DELETE ON [TABLE NAME] TO [USER];
 ```
 
+<br>
+
 ### 1.4. UPDATE 권한 
 
 특정 사용자에게 데이터 수정 권한을 부여한다. 
@@ -38,6 +44,8 @@ GRANT DELETE ON [TABLE NAME] TO [USER];
 ```sql
 GRANT UPDATE ON [TABLE NAME] TO [USER];
 ```
+
+<br>
 
 ### 1.5. SESSION 권한
 
@@ -47,6 +55,8 @@ GRANT UPDATE ON [TABLE NAME] TO [USER];
 GRANT CREATE SESSION TO [USER];
 ```
 
+<br>
+
 ### 1.6. CREATE USER 권한
 
 사용자를 생성하는 권한
@@ -54,6 +64,8 @@ GRANT CREATE SESSION TO [USER];
 ```sql
 GRANT CREATE USER TO [USER];
 ```
+
+<br>
 
 ### 1.7. DROP USER 권한
 
@@ -63,6 +75,8 @@ GRANT CREATE USER TO [USER];
 GRANT DROP USER TO [USER];
 ```
 
+<br>
+
 ### 1.8. DROP ANY TABLE 권한
 
 테이블 삭제하는 권한 
@@ -70,6 +84,8 @@ GRANT DROP USER TO [USER];
 ```sql
 GRANT DROP ANY TABLE TO [USER];
 ```
+
+<br>
 
 ### 1.9. QUERY REWRITE 권한
 
@@ -81,6 +97,8 @@ A라는 사용자가  복잡한 쿼리를 이용하여 VIEW를 만들었는데 B
 GRANT QUERY REWRITE TO [USER];
 ```
 
+<br>
+
 ### 1.10. CREATE TABLE 권한
 
 사용자 스키마에서 테이블을 생성할 수 있는 권한
@@ -88,6 +106,8 @@ GRANT QUERY REWRITE TO [USER];
 ```sql
 GRANT CREATE TABLE TO [USER];
 ```
+
+<br>
 
 ### 1.11. CREATE VIEW 권한
 
@@ -97,6 +117,8 @@ GRANT CREATE TABLE TO [USER];
 GRANT CREATE VIEW TO [USER];
 ```
 
+<br>
+
 ### 1.12. CREATE SEQUENCE 권한
 
 사용자 스키마에서 함수를 생성할 수 있는 권한
@@ -104,6 +126,8 @@ GRANT CREATE VIEW TO [USER];
 ```sql
 GRANT CREATE SEQUENCE TO [USER];
 ```
+
+<br>
 
 ### 1.13. CREATE PROCEDURE 권한
 
@@ -113,6 +137,8 @@ GRANT CREATE SEQUENCE TO [USER];
 GRANT CREATE PROCEDURE TO [USER];
 ```
 
+<br>
+
 ### 1.14. 여러 개 권한 부여
 
 여러 개의 권한을 부여하고 싶을 경우 다음과 같이 나열한다.
@@ -121,11 +147,15 @@ GRANT CREATE PROCEDURE TO [USER];
 GRANT SELECT, INSERT, DELETE, UPDATE ON [TABLE NAME] TO [USER];
 ```
 
+<br>
+
 ### 1.15. 사용자에게 부여된 권한 조회
 
 ```sql
 SELECT * FROM DBA_ROLE_PRIVS WHERE GRANTEE = 'HOYA' ;  
 ```
+
+<br>
 
 ### 1.16. 현재 세션 사용자에게 부여된 ROLE 조회
 
@@ -135,17 +165,23 @@ SELECT * FROM DBA_ROLE_PRIVS WHERE GRANTEE = 'HOYA' ;
 SELECT * FROM USER_ROLE_PRIVS;  
 ```
 
+<br>
+
 ## 2. ROLE 역할
 
-여러 개의 권한 묶어 ROLE을 만들고 사용자에게 해당 ROLE을 부여할 수 있다. 
+여러 개의 권한 묶어 ROLE을 만들고 사용자에게 해당 ROLE을 부여할 수 있다.
+
+<br>
 
 ### 2.1. ROLE 생성
 
-ROLE을 생성한다. 
+ROLE을 생성한다.
 
 ```sql
 CREATE ROLE user_role;
 ```
+
+<br>
 
 ### 2.2. ROLE에 권한 부여
 
@@ -155,6 +191,8 @@ ROLE에 권한을 부여한다.
  GRANT CREATE SYNONYM, CREATE VIEW to user_role;
 ```
 
+<br>
+
 ### 2.3. ROLE 부여
 
 생성된 ROLE을 사용자에게 부여한다.
@@ -163,6 +201,7 @@ ROLE에 권한을 부여한다.
  GRANT user_role TO [사용자];
 ```
 
+<br>
 
 ## 3. REVOKE 권한 회수
 
@@ -173,7 +212,6 @@ REVOKE user_role TO [사용자];
 
 REVOKE CREATE TABLE TO [사용자]; 
 ```
-
 
 
 
