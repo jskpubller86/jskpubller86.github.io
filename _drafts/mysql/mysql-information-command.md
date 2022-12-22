@@ -32,6 +32,15 @@ show global variables like '%connect_timeout';
 
 <br>
 
+#### 4. 대기 시간
+
+쿼리 수행을 기다리는 시간으로 지정된 시간 안에 쿼리가 수행되지 않으면 커넥션이 종료된다.
+
+```sql
+show global variables like '%wait_timeout';
+```
+
+
 #### 4. 프로세스 리스트
 
 ```sql

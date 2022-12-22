@@ -1,5 +1,5 @@
 ---
-title : @JoinColumn에 대한 생각
+title : JoinColumn annotation에 대한 생각
 categories : java serialize
 ---
 
