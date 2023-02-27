@@ -1,5 +1,5 @@
 ---
-title : Creating Jekyll Blog Project
+title : Jekyll Blog 만들기
 categories : jekyll blog
 --- 
 

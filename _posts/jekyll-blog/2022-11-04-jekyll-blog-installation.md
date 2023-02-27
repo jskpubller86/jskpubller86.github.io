@@ -1,5 +1,5 @@
 ---
-title : Jekyll Blog Installation
+title : Jekyll Blog를 위한 준비
 categories : jekyll blog
 --- 
 
