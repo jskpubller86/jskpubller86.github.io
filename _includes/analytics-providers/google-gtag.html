@@ -6,4 +6,7 @@
   gtag('js', new Date());
 
   gtag('config', '{{ site.analytics.google.tracking_id }}', { 'anonymize_ip': {{ site.analytics.google.anonymize_ip | default: false }}});
+
+  console.log('아이피 주소');
+  console.log('{{site.analytics.google.anonymize_ip}}');
 </script>
