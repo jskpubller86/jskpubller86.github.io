@@ -98,7 +98,7 @@ analytics:
   google:
     tracking_id          : "G-ELS7NEX0XK"
     anonymize_ip         : # true, false (default)
-
+    adsense_id           : "ca-pub-3162351885124110"
 
 # Site Author
 author:
