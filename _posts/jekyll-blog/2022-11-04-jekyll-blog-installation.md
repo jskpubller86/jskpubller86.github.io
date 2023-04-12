@@ -1,6 +1,6 @@
 ---
-title : Jekyll Blog를 위한 준비
-categories : jekyll blog
+title : Jekyll 설치 
+categories : jekyll installation
 --- 
 
 ## 1. Ruby 설치

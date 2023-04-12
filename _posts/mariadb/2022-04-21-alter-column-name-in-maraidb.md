@@ -1,6 +1,6 @@
 ---
 title : MariaDB에서 컬럼 이름 수정하기
-categories : db mariadb alter column
+categories : mariadb column
 ---
 
 MariaDB에서 컬럼의 이름을 수정하는 DDL 문은 다음과 같다.

@@ -1,6 +1,6 @@
 ---
 title : 맥에서 백틱을 표현하기
-category : mac, backtick, macOS
+categories : macOS backtick 
 ---
 
 맥에서 백틱 (`)은 현재 키보드가 영어일 때 사용가능하다.

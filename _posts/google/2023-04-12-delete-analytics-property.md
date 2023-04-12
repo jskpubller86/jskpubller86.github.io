@@ -1,6 +1,6 @@
 ---
 title : Analytics 삭제
-categories : delete analytics property
+categories : google analytics
 ---
 
 

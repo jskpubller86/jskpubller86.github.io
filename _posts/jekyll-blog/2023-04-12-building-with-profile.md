@@ -1,5 +1,5 @@
 ---
-title : JEKYLL 
+title : profile과 함께 빌드하기 
 categories : jekyll blog
 --- 
 

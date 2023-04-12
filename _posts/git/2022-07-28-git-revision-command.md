@@ -1,6 +1,6 @@
 ---
 title :  GIT REVISION 내역 보기
-categories : git history revision
+categories : git history
 ---
 
 ## git show

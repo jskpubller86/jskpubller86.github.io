@@ -1,6 +1,6 @@
 ---
 title : lombok에서 @ToString이란?
-categories : java web lombok
+categories : java web 
 ---
 
 JAVA 웹 애플리케이션 lombok 라이브러리는 자바 클래스를 만들 때 자주 사용되는 getter와 equlas 등의 메서드들을 자동으로 만들어 주는 편리한 도구이다.

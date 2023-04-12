@@ -1,6 +1,6 @@
 ---
 title : 쿼리문에서 ORACLE 변수 사용 방법
-categories : db oracle variable
+categories : oracle variable
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 title : ORACLE 컬럼 정보 조회
-categories : db oracle column
+categories : oracle column
 ---
 
 오라클에서 컬럼을 조회하고 싶을 때가 있다. 

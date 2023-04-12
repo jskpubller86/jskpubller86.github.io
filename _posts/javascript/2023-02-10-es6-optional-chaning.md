@@ -1,6 +1,6 @@
 ---
 title : es6 옵션 연결자 (optional-chaining)
-category : es6 optional chaining
+category : es6 
 ---
 
 옵션 연결자는 `?`로 옵션을 표시하고 뒤에 chaining 연산자로 연결한다.

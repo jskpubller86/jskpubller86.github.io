@@ -1,6 +1,6 @@
 ---
 title : 이클립스에서 새로 블록 선택하기
-categories : eclipse block vertical
+categories : eclipse shortcut
 ---
 
 이클립스에서 `alt + shift + a`를 누르면 커서가 십자가 모양으로 바뀌면서 세로 블록 선택을 할 수 있다.

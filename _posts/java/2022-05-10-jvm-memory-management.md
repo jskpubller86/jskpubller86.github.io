@@ -1,6 +1,6 @@
 ---
 title : JVM 메모리 구조
-categories : java  memory
+categories : java  architecture
 ---
 
 자바는 JVM에서 실행된다. 

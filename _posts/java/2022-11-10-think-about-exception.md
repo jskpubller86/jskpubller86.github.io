@@ -1,6 +1,6 @@
 ---
 title : Exception에 대한 생각
-categories : java exception throw throws
+categories : java exception
 ---
 
 예외를 던지는 방법은 throws와 throw 두가지가 있다.

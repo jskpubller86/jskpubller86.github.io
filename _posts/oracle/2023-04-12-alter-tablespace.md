@@ -1,5 +1,6 @@
 ---
 title : 테이블스페이스 변경
+categories : orcle tablespace
 ---
 
 

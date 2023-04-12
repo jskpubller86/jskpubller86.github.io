@@ -1,6 +1,6 @@
 ---
 title : 오라클 유저 생성하기
-categories : create oracle user
+categories : oracle user
 ---
 
 

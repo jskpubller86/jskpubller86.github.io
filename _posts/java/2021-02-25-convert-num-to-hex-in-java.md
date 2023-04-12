@@ -1,6 +1,6 @@
 ---
 title : JAVA에서 숫자를 HEX값으로 변경하기
-categories : java convert hex
+categories : java grammar 
 ---
 
 자바에서는 숫자를 HEX 값으로 변경하는 여러가지 방법이 있다. 

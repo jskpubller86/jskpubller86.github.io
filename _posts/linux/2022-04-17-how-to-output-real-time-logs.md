@@ -1,6 +1,6 @@
 ---
 title : tail 명령어를 이용한 실시간 로그 확인
-categories : linux tail real-time logs
+categories : linux command 
 ---
 
 실무에서 리눅스 서버에 배포된 애플리케이션에 로그가 생성될 때 실시간으로 확인해야 하는 경우가 있다. 
