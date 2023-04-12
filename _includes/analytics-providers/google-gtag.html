@@ -1,12 +1,10 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google.tracking_id }}"></script>
-<script>
+<script> 
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  
   gtag('js', new Date());
-
-  gtag('config', '{{ site.analytics.google.tracking_id }}', { 'anonymize_ip': {{ site.analytics.google.anonymize_ip | default: false }}});
-
-  console.log('아이피 주소');
-  console.log('{{site.analytics.google.anonymize_ip}}');
+  gtag('config', '{{ site.analytics.google.tracking_id }}');
+  console.log('추가');
 </script>
