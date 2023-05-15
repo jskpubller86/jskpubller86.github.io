@@ -1,3 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /rafts
+Disallow: /drafts
+Disallow: /page*
 Sitemap : https://jskpubller86.github.io/sitemap.xml
