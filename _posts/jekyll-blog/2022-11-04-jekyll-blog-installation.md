@@ -9,7 +9,7 @@ categories : jekyll installation
 
 jekyll은 Ruby 기반에서 설치된다. 
 
-먼저 Ruby를 설치해야 한다.
+그러므로 Ruby를 설치해야 한다.
 
 아래의 링크로 이동하면 일반 루비와 개발툴을 포함한 루비가 있는데 그 중에서 개발툴을 포함한 루비를 받아 설치한다. 
 
@@ -102,7 +102,7 @@ jekyll은 Ruby 기반에서 설치된다.
  
 이제 jekyll blog를 생성할 수 있게 되었고 블로그 생성에 대한 내용은 아래 링크로 이동하여 확인한다.
 
-[나만의 블로그 생성](./creating-jekyll-blog.md)
+[Jekyll Blog 만들기](/jekyll/blog/creating-jekyll-blog/)
 
 
 

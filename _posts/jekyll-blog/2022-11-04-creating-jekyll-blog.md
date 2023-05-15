@@ -11,7 +11,7 @@ jekyll을 통한 블로그를 생성하기 위해서는 `ruby`와 `gem`이 설�
 
 아직 설치가 안되었다면 아래 링크로 이동하여 설치 방법을 확인한다. 
 
-[나만의 블로그 생성](./jekyll-blog-installation.md)
+[jekyll 설치](/jekyll/installation/jekyll-blog-installation/)
 
 설치가 되었다면 블로그를 생성할 위치로 이동한다. 
 
