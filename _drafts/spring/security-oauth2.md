@@ -16,7 +16,7 @@ spring으로 프로젝트를 진행하면 대부분 security를 이용하여 회
 [google OAuth2 사용자 정보 인증 설정하기](/google/authentication/oauth2/google-authentication/)
 
 
-구글 사용자 인증정보 설정을 하였다면  스프링에서 security-oauth2 사용하기 위해서 의존파일이 있어야 한다.
+구글 사용자 인증정보 설정을 하였다면 스프링에서 security-oauth2 사용하기 위해서 의존파일이 있어야 한다.
 
 아래와 같이 먼저 의존 파일을 정의한다.
 
@@ -135,7 +135,11 @@ https://docs.spring.io/spring-security/site/docs/current/api/org/springframework
 <br>
 <br>
 
-브라우저는 리다이렉트를 통해 서버에 위 주소로 요청을 주고 서버는 해당 주소를 응답받고 처리하게 된다.
+브라우저(user-agent)는 리다이렉트를 통해 서버에 위 주소로 요청을 하고 서버는 해당 요청을 받는다. 
+
+oauth2 구조에서는 권한 코드를 가지고 token을 얻는다. 
+
+
 
 
 
