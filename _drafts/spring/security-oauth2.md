@@ -135,9 +135,8 @@ https://docs.spring.io/spring-security/site/docs/current/api/org/springframework
 <br>
 <br>
 
-브라우저(user-agent)는 리다이렉트를 통해 서버에 위 주소로 요청을 하고 서버는 해당 요청을 받는다. 
+브라우저(user-agent)는 리다이렉트를 통해 서버에 위 주소로 요청을 하고 서버쪽의  `OAuth2LoginAuthenticationFilter`에서 `/login/oauth2/code/*` uri에 대해 토큰을 받는 작업을 수행한다. 
 
-oauth2 구조에서는 권한 코드를 가지고 token을 얻는다. 
 
 
 
