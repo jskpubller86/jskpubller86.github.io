@@ -1,6 +1,6 @@
 ---
 title : profile과 함께 빌드하기 
-categories : jekyll blog
+categories : jekyll
 --- 
 
 jekyll 블로그는 production과 development로 빌드할 수 있다. 

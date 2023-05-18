@@ -1,6 +1,6 @@
 ---
 title : Jekyll 설치 
-categories : jekyll installation
+categories : jekyll
 --- 
 
 ## 1. Ruby 설치

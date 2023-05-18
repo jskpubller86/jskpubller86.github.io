@@ -1,6 +1,6 @@
 ---
 title : Jekyll Blog 만들기
-categories : jekyll blog
+categories : jekyll
 --- 
 
 ## 1. 블로그 프로젝트 생성

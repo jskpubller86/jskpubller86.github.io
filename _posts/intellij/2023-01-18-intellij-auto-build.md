@@ -1,6 +1,6 @@
 ---
 title : 인텔리제이에서 자동빌드 설정  
-categories : java intellij auto build
+categories : java intellij
 ---
 
 `File > Settings > Build, Excution, Deployment > Compiler` 에서 

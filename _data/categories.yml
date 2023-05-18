@@ -6,30 +6,4 @@
   sub : 
     - name : "servlet"
 
-- name : "apache"
-  sub : 
-    - name : "jmeter"
-
-- name : "db"
-  sub : 
-    - name : "oracle"
-    - name : "mariadb"
-
-- name : "github"
-
-- name : "ide"
-  sub : 
-    - name : eclipse
-    - name : sqldeveloper
-
-- name : "linux"
-- name : "log"
-
-- name : "sql"
-  sub : 
-    - name : oracle
-    - name : mariadb
-
-- name : "window"
-  sub : 
-    - name : "cmd"
+- name : "jekyll"
