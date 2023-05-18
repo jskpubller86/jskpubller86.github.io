@@ -18,9 +18,9 @@ spring으로 프로젝트를 진행하면 대부분 security를 이용하여 회
 
 구글 사용자 인증정보 설정을 하였다면 스프링에서 security-oauth2 사용하기 위해서 의존파일이 있어야 한다.
 
-아래와 같이 먼저 의존 파일을 정의한다.
+아래와 같이 의존 파일을 정의한다.
 
-여기서는 gradle을 사용한다.
+여기서는 gradle을 사용하였다.
 
 ```gradle
     implementation 'org.springframework.boot:spring-boot-starter-security'
@@ -107,7 +107,7 @@ public class SecurityConfigure {
 
 그건 시큐리티의 필터에서 내부 구조를 보면 이해가 된다. 
 
-잠깐 시큐리티의 내부 필터 구조를 보면 아래의 그림처럼 `OAuth2AuthorizationRequestRedirectFilter` 필터를 확인할 수 있다.
+시큐리티의 내부 필터 구조를 보면 아래의 그림처럼 `OAuth2AuthorizationRequestRedirectFilter` 필터를 확인할 수 있다.
 
 ![구글 인증 화면](/assets/images/spring/security-oauth2/04.png)
 
@@ -118,24 +118,44 @@ public class SecurityConfigure {
 
 https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/oauth2/client/web/OAuth2AuthorizationRequestRedirectFilter.html
 
-거기에서 아래 내용을 보면  user-agent와 Authorization Endpoint 포인트를 연결하도록 리다이렉팅을 초기화한다는 것을 볼 수 있다.
+거기에서 아래 내용을 보면  user-agent와 Authorization Endpoint 포인트로 리다이렉트하고 인증코드 권한을 초기화한다고 되어 있다.
 
 `This Filter initiates the authorization code grant flow by redirecting the End-User's user-agent to the Authorization Server's Authorization Endpoint.` 
 
-결론적으로 `http://localhost:8080/oauth2/authorization/google` 요청에 대하여 `OAuth2AuthorizationRequestRedirectFilter`에서 `Authorization Endpoint`의 리다이렉트를 `user-agent`에 응답하기 때문에 우리가 위에서 구글 로그인 화면을 볼 수 있는 것이다.
+결론적으로 `http://localhost:8080/oauth2/authorization/google` 요청에 대하여 `OAuth2AuthorizationRequestRedirectFilter`에서 `Authorization Endpoint`로 리다이렉트를 `user-agent`에 응답하기 때문에 우리가 위에서 구글 로그인 화면을 볼 수 있는 것이다.
 
 구글 로그인 화면은 구글 사용자 인증 정보에서 설정한 정보를 보여준다.
 
 여기서 우리가 계정을 선택하게 되면 구글 인증서버는 인증을하고 인증 후에 
 
-아래의 URI로 리다이렉트 응답을 하게 된다.
+아래의 URI로 리다이렉트 한다.
 
 `http://localhost:8080/api/v1/login/oauth2/code/google?state={상태}&code={인증 코드}&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent`
 
 <br>
 <br>
 
-브라우저(user-agent)는 리다이렉트를 통해 서버에 위 주소로 요청을 하고 서버쪽의  `OAuth2LoginAuthenticationFilter`에서 `/login/oauth2/code/*` uri에 대해 토큰을 받는 작업을 수행한다. 
+브라우저(user-agent)는 리다이렉트로 클라이언트(서버)에 위 주소로 요청을 하고 클라이언트의 시큐리티 필터 중  `OAuth2LoginAuthenticationFilter`에서 `/login/oauth2/code/*` uri에 대해 토큰을 받는 작업을 수행한다.
+
+그렇게 토큰을 받은 후에는 OAuth2UserService 인터페이스의 구현체를 호출한다.
+
+`OAuth2UserService` 인터페이스의 구현체는 토큰을 가지고 사용자 정보를 처리하는 작업을 한다.
+
+이후 성공적으로 작업이 끝나면 `AuthenticationSuccessHandler` 인터페이스의 구현체를 호출한다.
+
+
+여기까지 현 스프링 부트2의 시큐리티 OAuth2 로그인의 기본 흐름을 가볍게 알아보았다.
+
+나머지는 API 문서를 보며 더 깊게 파고들자.
+
+
+
+
+
+
+
+
+ 
 
 
 
