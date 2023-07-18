@@ -1,6 +1,6 @@
 ---
 title : 엑셀에서 VBA 사용하기
-categories : excel vba
+categories : office excel
 ---
 
 엑셀에서는 VBA를 이용하여 엑셀에서 사용하기 편리한 매크로 기능을 만들 수 있다. 
