@@ -5,7 +5,7 @@ categories : db oracle
 
 truncate는 테이블에 있는 데이터를 한 번에 삭제하는 방법이다.
 
-```
+```sql
 truncate table <tablename>
 ```
 

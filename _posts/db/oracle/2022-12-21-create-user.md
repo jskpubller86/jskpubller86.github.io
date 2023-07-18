@@ -6,8 +6,6 @@ categories : db oracle
 
 ## 1. 유저 생성
 
-
-
 CREATE USER [유저 이름] IDENTIFIED BY [비밀번호];
 
 ```sql

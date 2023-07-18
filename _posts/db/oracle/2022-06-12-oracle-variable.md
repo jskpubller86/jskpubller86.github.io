@@ -13,6 +13,8 @@ categories : db oracle
 DECLARE IN_VAR_CD VARCHAR2(16);
 ~~~
 
+<br>
+
 ## 1.1. 초기 값을 포함한 변수 선언
 
 초기 값을 포함한 변수 선언은 `:=` 키워드를 사용합니다.
@@ -21,6 +23,8 @@ DECLARE IN_VAR_CD VARCHAR2(16);
 -- DECLARE {변수명} {타입} := {초기값};
 DECLARE IN_VAR_CD VARCHAR2(16) := '홍길동';
 ~~~
+
+<br>
 
 ## 2. 변수 사용
 

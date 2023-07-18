@@ -36,6 +36,7 @@ FROM USERS;
 
 그러면...WITHIN 말고 다른걸 쓰면 안될까? 안된다!
 
+<br>
 
 ## 2. OVER() 함수
 
@@ -66,6 +67,7 @@ ABS() 함수는 절대 값을 반환한다.
 ```SQL
 SELECT ABS(-15) FROM DUAL;
 ```
+<br>
 
 ### 1.2. ACOS() 함수
 
@@ -75,6 +77,8 @@ SELECT ABS(-15) FROM DUAL;
 SELECT ACOS(.3) FROM DUAL;
 ```
 
+<br>
+
 ### 1.3. MOD() 함수
 
 앞에 있는 수를 뒤에 있는 수로 나눈다.
@@ -82,6 +86,8 @@ SELECT ACOS(.3) FROM DUAL;
 ```sql
 SELECT MOD(11,4) FROM DUAL;
 ```
+
+<br>
 
 ### 1.4. FLOOR() 함수
 
@@ -91,8 +97,7 @@ SELECT MOD(11,4) FROM DUAL;
 SELECT FLOOR(15.4) FROM DUAL; // 15
 ```
 
-### 1.5. 
-
+<br>
 
 ## 2. General Comparison Functions
 
@@ -116,6 +121,8 @@ SELECT GREATEST(1, 'h', 3) Greatest FROM DUAL
 
 SELECT GREATEST() 함수 인자값의 데이터 유형이 다르면 오류가 발생한다.
 
+<br>
+
 ### 3.1. LEAST() 함수
 
 가장 최근 값을 반환한다.
@@ -128,6 +135,8 @@ FROM DUAL;
 ```
 
 SELECT LEAST() 함수 인자값의 데이터 유형이 다르면 오류가 발생한다.
+
+<br>
 
 ### 3.1.1. CAST() 함수
 
