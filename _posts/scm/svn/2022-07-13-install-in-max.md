@@ -1,6 +1,6 @@
 ---
 title : MAC에 SVN 설치하기
-category : scm svn
+categories : scm svn
 ---
 
 Homebrew는 맥용 패키지 관리자이다. 
