@@ -1,6 +1,7 @@
 ---
 title : Jekyll Blog 만들기
 categories : framework jekyll-blog
+tags: jekyll blog create
 --- 
 
 ## 1. 블로그 프로젝트 생성

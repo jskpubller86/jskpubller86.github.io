@@ -1,6 +1,6 @@
 ---
 title : 스프링 스웨거 적용
-category : framework spring
+categories : framework spring
 ---
 
 스프링에서는 springFox에서 만든 라이브러리를 사용한다.

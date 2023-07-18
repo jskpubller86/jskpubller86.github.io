@@ -1,6 +1,7 @@
 ---
 title : 시큐리티 OAuth2 사용하기
 categories : platform spring
+tags: security oauth2
 ---
 
 spring으로 프로젝트를 진행하면 대부분 security를 이용하여 회원가입 및 로그인 기능을 구현한다.

@@ -1,6 +1,6 @@
 ---
 title : 깃 
-categories : git commit reset revert
+categories : scm git
 ---
 
 깃 커밋에는 여러가지 방법이 있다.

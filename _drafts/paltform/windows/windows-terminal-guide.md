@@ -1,6 +1,6 @@
 ---
 title : Window Terminal 툴 사용법
-category : window terminal guide
+categories : platform windows
 ---
 
 window terminal을 사용할 경우 터미널을 탭하여 사용할 수 있다. 

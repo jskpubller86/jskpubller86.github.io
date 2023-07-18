@@ -1,6 +1,7 @@
 ---
 title : 스프링 테스트에서 @transactional 어노테이션 사용시 주의사항
 categories : platform spring
+tags: transactional test springtest
 ---
 
 

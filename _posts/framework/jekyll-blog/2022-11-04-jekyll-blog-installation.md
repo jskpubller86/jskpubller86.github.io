@@ -1,6 +1,7 @@
 ---
 title : Jekyll 설치 
 categories : framework jekyll-blog
+tags : install jekyll blog
 --- 
 
 ## 1. Ruby 설치
