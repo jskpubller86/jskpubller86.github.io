@@ -19,7 +19,7 @@ public class CHILD {
 
 <br>
 
-부모는 자식이 던진 오류를 처리할 수 있다.
+부모는 자식이 던진 예외를 처리할 수 있다.
 
 ```java
 public class PARENT {

@@ -3,18 +3,17 @@ title : 정보처리기사 질문 20선 2
 categories : theory question
 ---
 
-<style>
-    .answer {color: #FFF; background-color: #FFF;}
-</style>
+<link rel="stylesheet" href="/assets/css/question.css" />
+<script src="/assets/js/theory/question/index.js"></script>
 
 #### 01. 예외 처리 구문을 지원하는 언어를 골라 쓰시오.
 
 > C, C++, JAVA, Python
 
-
-답
-
-<div class="answer"> C++, JAVA, Python </div>
+<div class="answer">
+    <button>정답</button>
+    <p> C++, JAVA, Python </p>
+</div>
 
 <br>
 
@@ -24,10 +23,10 @@ categories : theory question
 > - 각 프로세스는 공유의 (  )를 가진다. 즉, 프로세스가 생성될 때 고유의 (   )가 생성되고, 
    종료되면 (   )가 제거된다.
 
-
-답
-
-<div class="answer"> PCB(Process Control Block) </div>
+<div class="answer">
+    <button>정답</button>
+    <p>PCB(Process Control Block)</p>
+</div>
 
 <br>
 
@@ -37,20 +36,21 @@ categories : theory question
 > - 프로세스가 입/출력 처리가 필요하면 현재 수행 중인 프로세스가 입/출력을 위해 (   )로 전이된다.
 > - 대기 중인 상태의 프로세스는 입/출력 처리가 완료되면 (   )에서 준비 상태로 전이된다.
 
-답
-
-<div class="answer"> 대기(Block)상태 </div>
+<div class="answer">
+    <button>정답</button>
+    <p>대기(Block)상태</p> 
+</div>
 
 <br>
-
 
 #### 04. 아래에서 설명하는 테스트 도구를 쓰시오.
 
 > 자바 프로그래밍 언어를 이용한 xUnit의 테스트 기법으로써 숨겨진 단위 테스트를 끌어내어 정형화시켜 단위 테스트를 쉽게 해주는 테스트용 프레임워크이다.
 
-답
-
-<div class="answer"> JUnit </div>
+<div class="answer">
+    <button>정답</button>
+    <p>JUnit</p>
+</div>
 
 <br>
 
@@ -60,9 +60,10 @@ categories : theory question
 > 1. 슈퍼키는 ( A )의 속성을 갖는다.
 > 2. 후보키는 ( A )와 ( B )의 속성을 갖는다.  
 
-답
-
-<div class="answer"> A.유일성, B.최소성  </div>
+<div class="answer">
+    <button>정답</button>
+    <p>A.유일성, B.최소성</p>
+</div>
 
 <br>
 
@@ -71,9 +72,10 @@ categories : theory question
 
 > IP 데이터그램에 대한 메시지 체크섬(Checksum*)을 활용한 데이터 인증과 비연결형 무결성을 보장해 주는 프로토콜이다.
 
-답
-
-<div class="answer"> IPSec AH(Authentication Header)  </div>
+<div class="answer">
+    <button>정답</button>
+    <p>IPSec AH(Authentication Header)</p>
+</div>
 
 <br>
 
@@ -84,9 +86,10 @@ categories : theory question
 > - 하나의 프로세스 내에서 병행성을 증가시키기 위한 매커니즘이다.
 > - 소속된 프로세스의 자원들과 메모리를 공유한다.
 
-답
-
-<div class="answer"> 스레드 </div>
+<div class="answer">
+    <button>정답</button>
+    <p>스레드</p>
+</div>
 
 <br>
 
@@ -97,20 +100,21 @@ categories : theory question
 > - 모든 프로세스에 대한 공정한 처리가 가능하다.
 > - 일괄 처리 시스템에 적합하다. 
 
-답
-
-<div class="answer"> 비선점 스케쥴링 </div>
+<div class="answer">
+    <button>정답</button>
+    <p>비선점 스케쥴링</p>
+</div>
 
 <br>
-
 
 #### 09. 다음에서 설명하는 공격 기법을 쓰시오.
 
 > 이 공격은 APT 공격에서 주로 쓰이는 공격으로, 공격 대상이 방문할 가능성이 있는 합법적인 웹 사이트를 미리 감염시킨 뒤, 잠복하고 있다가 공격대상이 방문하면 대상의 컴퓨터에 악성코들 설치하는 방식이다.
 
-답
-
-<div class="answer"> 워터링 홀(Watering Hole) </div>
+<div class="answer">
+    <button>정답</button>
+    <p>워터링 홀(Watering Hole)</p>
+</div>
 
 <br>
 
@@ -122,9 +126,10 @@ categories : theory question
 > ( 3 ) : 현재 작업하는 디렉터리
 > $USER : 사용자의 이름
 
-답
-
-<div class="answer"> 1.$HOME, 2.$PATH, 3.$PWD </div>
+<div class="answer"> 
+    <button>정답</button>
+    <p>1.$HOME, 2.$PATH, 3.$PWD</p>
+</div>
 
 <br>
 
@@ -133,9 +138,10 @@ categories : theory question
 > - 종래 파일 시스템의 문제점인 데이터의 중복성과 종속성 등의 문제를 최소화하기 위해 등장하였으며, 사용자의 데이터베이스 간의 중계 역할을 한다.
 > - 데이터베이스의 내용을 정의하고, 조작, 제어(관리)할 수 있도록 함으로써 모든 사용자나 응용 프로그램들이 데이터베이스를 공유할 수 있도록 관리*운영해 주는 소프트웨어 시스템을 말한다.
 
-답
-
-<div class="answer"> DBMS(DataBase Management System) </div>
+<div class="answer"> 
+    <button>정답</button>
+    <p>DBMS(DataBase Management System)</p>
+</div>
 
 <br>
 
@@ -144,9 +150,10 @@ categories : theory question
 
 > SELECT, CREATE, COMMIT, GRANT, INSERT, DELETE, ALTER
 
-답
-
-<div class="answer"> SELECT, INSERT, DELETE</div>
+<div class="answer">
+    <button>정답</button>
+    <p>SELECT, INSERT, DELETE</p>
+</div>
 
 <br>
 
@@ -154,9 +161,10 @@ categories : theory question
 
 > 데이터베이스의 전체적인 구조와 제약조건에 대한 명세를 기술, 정의한 것을 말한다.
 
-답
-
-<div class="answer"> 스키마(Schema) </div>
+<div class="answer">
+    <button>정답</button>
+    <p>스키마(Schema)</p>
+</div>
 
 <br>
 
@@ -164,9 +172,10 @@ categories : theory question
 
 > 개념젹 설계 > (   ) > 물리적 설계
 
-답
-
-<div class="answer"> 논리적 설계 </div>
+<div class="answer">
+    <button>정답</button>
+    <p>논리적 설계<p>
+</div>
 
 <br>
 
@@ -179,20 +188,22 @@ categories : theory question
 > d. 다른말로 ERD라고도 한다.
 > e. 관계는 직사각형 기호로 표현한다.
 
-답
-
-<div class="answer"> a, e </div>
+<div class="answer">
+    <button>정답</button>
+    <p>a, e</p>
+</div>
 
 <br>
 
 
 #### 16. 관계 대수 중 select, project에 대해서 약술하시오.
 
-답
-
-<div class="answer"> 
-select : 릴레이션에서 특정 조건의 튜플을 조회하기 위한 연산 <br>
-project: 릴레이션에서 특정 속성만을 조회하기 위한 연산
+<div class="answer">
+    <button>정답</button>
+    <p>
+        select : 릴레이션에서 특정 조건의 튜플을 조회하기 위한 연산 <br>
+        project: 릴레이션에서 특정 속성만을 조회하기 위한 연산
+    </p>
 </div>
 
 <br>
@@ -200,10 +211,11 @@ project: 릴레이션에서 특정 속성만을 조회하기 위한 연산
 
 #### 17. 함수적 종속(Functional Dependency)에 대해서 약술하시오.
 
-답
-
-<div class="answer"> 
-릴레이션에서 A와 B 속성이 있을 때 A를 알면 B를 알 수 있을 때 B가 A에 종속됨을 의미한다.
+<div class="answer">
+    <button>정답</button>
+    <p>
+        릴레이션에서 A와 B 속성이 있을 때 A를 알면 B를 알 수 있을 때 B가 A에 종속됨을 의미한다.
+    </p>
 </div>
 
 <br>
@@ -212,10 +224,9 @@ project: 릴레이션에서 특정 속성만을 조회하기 위한 연산
 
 > 정부에서 정한 인증기관 및 심사기관에서 기업이 주요 정보자산을 보호하기 위해 수립, 관리, 운영하는 정보보호 관리체계가 인증 기준에 적합한지를 심사하여 인증을 부여하는 제도
 
-답
-
-<div class="answer"> 
-    ISMS-P
+<div class="answer">
+    <button>정답</button>
+    <p>ISMS-P</p>
 </div>
 
 <br>
