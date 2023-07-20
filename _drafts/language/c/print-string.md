@@ -3,7 +3,6 @@ title : printf를 이용한 출력
 categories : language c
 ---
 
-
 C에서 기본적은 출력을 담당하는 함수로 printf가 있다.
 
 printf의 포맷 옵션은 다음과 같다.
