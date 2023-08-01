@@ -13,6 +13,7 @@
     - name : "aws"
     - name : "gradle"
     - name : "maven"
+    - name : "jenkins"
 
 - name : "scm"
   sub : 
@@ -32,7 +33,6 @@
     - name : "visual-studio-code"
     - name : "visual-studio"
     - name : "eclipse"
-    - name : "jenkins"
 
 - name : "language"
   sub : 
@@ -52,6 +52,7 @@
     - name : "react"
     - name : "vue"
     - name : "css"
+    - name : "sh"
 
 - name : "platform"
   sub : 

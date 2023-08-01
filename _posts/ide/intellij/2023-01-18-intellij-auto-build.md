@@ -1,7 +1,9 @@
 ---
-title : 인텔리제이에서 자동빌드 설정  
+title : 인텔리제이에서 스프링 자동빌드 설정
 categories : ide intellij
 ---
+
+
 
 `File > Settings > Build, Excution, Deployment > Compiler` 에서 
 
