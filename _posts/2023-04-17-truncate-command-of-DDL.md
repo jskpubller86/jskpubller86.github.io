@@ -1,5 +1,5 @@
 ---
-title : truncate 명령어로 테이블 데이터 삭제
+title : DDL에 속한 truncate 명령어
 categories : db oracle
 ---
 

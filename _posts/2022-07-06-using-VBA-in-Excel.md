@@ -1,5 +1,5 @@
 ---
-title : 엑셀에서 VBA 사용하기
+title : 엑셀에서 VBA 사용
 categories : office excel
 ---
 

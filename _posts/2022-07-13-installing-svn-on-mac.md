@@ -1,5 +1,5 @@
 ---
-title : MAC에 SVN 설치하기
+title : MAC에 SVN 설치
 categories : scm svn
 ---
 

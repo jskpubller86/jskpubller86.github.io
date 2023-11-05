@@ -1,5 +1,5 @@
 ---
-title : 맥에서 백틱을 표현하기
+title : 맥에서 백틱을 표현
 categories : platform mac
 ---
 

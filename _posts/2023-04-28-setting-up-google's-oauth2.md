@@ -1,5 +1,5 @@
 ---
-title : google OAuth2 사용자 정보 인증 사용 설정하기
+title : google OAuth2 설정
 categories : api google
 ---
 

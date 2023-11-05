@@ -1,5 +1,5 @@
 ---
-title : 이클립스에서 새로 블록 선택하기
+title : 이클립스에서 새로 블록 선택
 categories : ide eclipse
 ---
 

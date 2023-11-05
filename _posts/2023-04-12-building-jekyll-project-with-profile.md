@@ -1,5 +1,5 @@
 ---
-title : profile과 함께 빌드하기 
+title : profile을 이용하여 jekyll 프로젝트 빌드
 categories : framework jekyll-blog
 tags: build blog jekyll
 --- 

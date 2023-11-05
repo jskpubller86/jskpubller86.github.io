@@ -1,5 +1,5 @@
 ---
-title : 시큐리티 OAuth2 사용하기
+title : 구글 OAuth2에 대한 스프링 시큐리티 설정
 categories : platform spring
 tags: security oauth2
 ---

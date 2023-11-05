@@ -1,5 +1,5 @@
 ---
-title : Analytics 삭제
+title : 구글 Analytics의 속성 삭제
 categories : api google
 ---
 

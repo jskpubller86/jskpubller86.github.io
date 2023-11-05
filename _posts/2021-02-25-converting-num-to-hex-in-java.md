@@ -1,5 +1,5 @@
 ---
-title : JAVA에서 숫자를 HEX값으로 변경하기
+title : JAVA에서 숫자를 HEX값으로 변경
 categories : language java
 ---
 

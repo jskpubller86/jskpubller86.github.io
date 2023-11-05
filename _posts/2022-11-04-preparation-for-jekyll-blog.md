@@ -1,5 +1,5 @@
 ---
-title : Jekyll 설치 
+title : Jekyll 블로그를 위한 준비
 categories : framework jekyll-blog
 tags : install jekyll blog
 --- 
