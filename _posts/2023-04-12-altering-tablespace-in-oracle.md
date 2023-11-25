@@ -20,6 +20,7 @@ ALTER INDEX 인덱스명 REBUILD TABLESPACE 테이블스페이스;
 위 ALTER 문을 사용하면 테이블스페이스를 수정할 수 있다.
 
 
+=끝=
 
 
 

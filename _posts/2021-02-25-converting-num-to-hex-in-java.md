@@ -66,3 +66,4 @@ int 값의 범위를 넘어가는 숫자는 Long 클래스를 이용하여 변�
 	Long.toHexString(12345678912345L); // print : b3a73ce5b59
 ~~~
 
+=끝=

@@ -17,7 +17,7 @@ ORDER BY COLUMN_ID ASC;
 COLUMN_ID는 컬럼이 생성된 순서를 의미한다.
 
 
-
+=끝=
 
 
 

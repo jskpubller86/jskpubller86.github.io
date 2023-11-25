@@ -24,3 +24,5 @@ ALTER TABLE files CHANGE f_id file_id BIGINT;
 ~~~sql
 ALTER TABLE files CHANGE f_id file_id; -- 오류 구문
 ~~~
+
+=끝=

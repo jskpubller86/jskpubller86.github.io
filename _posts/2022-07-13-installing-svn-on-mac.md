@@ -22,6 +22,7 @@ subversion                 subversion@1.8             bumpversion
 $ brew install subversion
 ~~~
 
+=끝=
 
 
 

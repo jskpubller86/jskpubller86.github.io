@@ -213,7 +213,7 @@ REVOKE user_role TO [사용자];
 REVOKE CREATE TABLE TO [사용자]; 
 ```
 
-
+=끝=
 
 
 

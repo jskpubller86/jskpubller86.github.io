@@ -34,8 +34,7 @@ httpd   854 jskim86    4u  IPv6 0x5cdb9beb60a6c30f     0t0      TCP  *:http-alt 
 $ kill -9 830
 ```
 
-
-
+=끝=
 
 
 

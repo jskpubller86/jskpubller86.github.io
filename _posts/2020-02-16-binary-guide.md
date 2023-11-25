@@ -185,7 +185,7 @@ categories : theory software-engineering
 
 이것으로 진법 설명을 마무리한다.
 
-
+=끝=
 
 
 

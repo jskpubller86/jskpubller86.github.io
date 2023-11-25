@@ -47,3 +47,6 @@ STAT #140177612354264 id=3 cnt=25 pid=2 pos=1 obj=0 op='NESTED LOOPS  (cr=0 pr=0
 도스 또는 쉘에서 tkprof를 치면 사용법을 확인할 수 있다.
 
 만약 tkprof 명령어를 찾을 수 없다고 오류가 나온다면  
+
+
+=끝=

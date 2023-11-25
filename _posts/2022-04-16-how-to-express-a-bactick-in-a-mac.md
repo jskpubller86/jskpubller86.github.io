@@ -8,3 +8,4 @@ categories : platform mac
 한글로 되어 있다면 영어로 변경 후  `₩` 키를 입력한다.
 
 
+=끝=
