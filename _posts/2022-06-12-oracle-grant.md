@@ -8,7 +8,7 @@ categories : db oracle
 ## 1. GRANT
 
 ### 1.1. INSERT 권한
-
+ 
 특정 사용자에게 데이터 삽입 권한을 부여한다. 
 
 ```sql
