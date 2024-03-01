@@ -1,5 +1,5 @@
 ---
-title : 리눅스의 vi 명령어 키
+title : 리눅스의 vi 에디터 명령어 키
 categories : linux
 ---
 
