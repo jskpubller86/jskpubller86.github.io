@@ -1,0 +1,6 @@
+/**
+ * 정보처리기사 20선에 사용할 답변 스타일
+ **/
+ .answer p, .answer button {display: block;}
+ .answer button {margin-bottom: 1em;}
+ .answer p {display: none;padding-left: 1em;color: #000; background-color: #FFF;}
