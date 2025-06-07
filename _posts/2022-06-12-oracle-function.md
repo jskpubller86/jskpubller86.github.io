@@ -1,6 +1,6 @@
 ---
 title : oracle 함수
-categories : db oracle
+categories : oracle
 ---
 
 오라클 함수에 대해 알아보자

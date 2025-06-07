@@ -1,6 +1,6 @@
 ---
 title : SQL 트레이스 수집 및 분석
-categories : db oracle
+categories : oracle
 ---
 
 SQL의 실행계획을 정밀하게 분석하려면 sql trace를 이용해야 한다.

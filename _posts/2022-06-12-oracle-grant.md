@@ -1,6 +1,6 @@
 ---
 title : oracle 권한 관리
-categories : db oracle
+categories : oracle
 ---
 
 오라클 권한에 대해서 알아보자

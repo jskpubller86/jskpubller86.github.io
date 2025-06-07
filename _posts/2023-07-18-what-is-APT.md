@@ -1,6 +1,6 @@
 ---
 title : APT는 무엇인가?
-categories : theory software-engineering
+categories : theory
 ---
 
 APT는 Advanced Persistent Threat의 약자로 지능형 지속 공격이라 한다.
