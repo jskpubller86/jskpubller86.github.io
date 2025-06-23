@@ -1,5 +1,5 @@
 ---
-title : 리눅스에서 파일과 디렉터리 권한
+title : 리눅스 권한
 categories : linux
 ---
 
@@ -9,7 +9,7 @@ categories : linux
 
 우선 현재 파일 또는 디렉터리 권한을 확인하기 위해서 ls -l 명령을 실행하면 권한에 대한 상세정보를 확인할 수 있다. 
 
-```
+```sh
 # ls -l
 drwxr-xr-x   2 root root 4096 Apr 18  2022 boot
 drwxr-xr-x   5 root root  360 Feb 15 01:52 dev
@@ -25,7 +25,7 @@ drwxr-xr-x   5 root root  360 Feb 15 01:52 dev
 
 이 항목을 기억하고 위의 파일 속성 부분을 해석해 보겠다.
 
-```
+```sh
 drwxr-xr-x   2 root root 4096 Apr 18  2022 boot
 
 -> 항목별 구분
@@ -37,7 +37,7 @@ d / rwxr-xr-x / 2 / root / root / 4096 / Apr 18 2022 / boot
 
 앞에서 부터 확인하면 다음과 같다.
 
-```
+```sh
 d -> 파일유형
 
 rwxr-xr-x   -> 파일 허가권
@@ -63,7 +63,7 @@ sample.txt -> 파일 이름
 
 위의 rwxr-xr-x을 3부분으로 나눠보면 다음과 같다. 
 
-```
+```sh
 rwx, r-x, r-x
 ```
 
@@ -75,7 +75,7 @@ rwx, r-x, r-x
 
 이러한 파일 허가권은 알파벳 말고 숫자로도 표현할 수 있으며 각 알파벳에 대응하는 숫자는 다음과 같다. 
 
-```
+```sh
 r - 4
 w - 2
 x - 1
@@ -86,7 +86,7 @@ x - 1
 
 ex) (4+2+1) = 7
 
-```
+```sh
 chmod 777 sample.txt
 ```
 
