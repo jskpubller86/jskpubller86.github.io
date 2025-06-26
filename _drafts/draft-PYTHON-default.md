@@ -1,5 +1,5 @@
 ---
-title : 데이터 자료구조
+title : 파이썬 기본
 categories : language python
 ---
 

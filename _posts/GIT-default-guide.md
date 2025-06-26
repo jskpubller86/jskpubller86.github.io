@@ -230,6 +230,7 @@ $ git branch -d sub # sub 브랜치 삭제
 ```sh
 $ git checkout -- CONTRIBUTING.md  #  CONTRIBUTING.md의 마지막 커밋 스냅샷으로 복구
 $ git restore . # 현 작업디렉터리를 마지막 커밋상태로 만듬.
+$ git restore --staged . # 스테이징 취소
 ```
 
 ## 9. 스태시(stash)
