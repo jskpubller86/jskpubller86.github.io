@@ -1,5 +1,6 @@
 ---
 title : profile을 이용하여 jekyll 프로젝트 빌드
+date: 2025-06-30
 categories : blog
 tags: build blog jekyll
 --- 
