@@ -1,10 +1,9 @@
 ---
-title : 파이썬 기본
-date: 
+title : 파이썬 기본 
 categories : python
 ---
 
-먼저 selenium을 설치한다.
+먼저 chromedriver 다운로드 한다.
 
 ```py
 # 셀레니움 설치
