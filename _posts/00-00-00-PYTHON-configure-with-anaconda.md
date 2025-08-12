@@ -6,6 +6,8 @@ categories : java
 
 ## 1. 아나콘다(Anaconda) 설치
 
+### 1.1. 윈도우
+
 **아나콘다(Anaconda)**는 데이터 과학, 머신러닝, 인공지능, 통계 분석 등을 위한 파이썬 기반 통합 개발 환경이다.
 
 쉽게 말하면, 필요한 도구들을 한 번에 설치하고 관리할 수 있게 해주는 개발자용 툴박스다.
@@ -59,7 +61,37 @@ $ conda activate base # 접속
 $ conda deactivate # 접속 해제
 ```
 
-### 1.1. 가상화 환경 생성
+### 1.2. 리눅스
+
+```sh
+# wget 설치 on rocky
+$ sudo yum install wget
+
+# 콘다 파일 다운로드
+$ wget https://repo.anaconda.com/archive/Anaconda3-2025.06-0-Linux-x86_64.sh
+
+# 아나콘다 쉘 실행, 일반 사용자로 실행
+$ bash Anaconda3-2025.06-0-Linux-x86_64.sh
+# 쉘 실행 후 진행 스탭:  enter -> yes -> enter -> yes
+
+# .bashrc에 설정된 conda 실행문 업데이트 
+$ source ~/.bahsrc
+
+#  conda 명령어 확인
+$ conda --version
+
+# 콘다 업데이트를 실행
+$ conda update --all
+# 업데이트 실행 후 스탭 : yes
+
+
+
+# conda init으로 설정 초기화
+$ conda init
+```
+
+
+## 2. 가상화 환경 생성
 
 현재는 base라는 기본 가상화 환경만 존재한다.
 
@@ -67,7 +99,10 @@ $ conda deactivate # 접속 해제
 
 ```sh
 $ conda create -n myconda python=3.11  #파이썬 3.11의 myconda생성
+# 생성 step: y
+
 ```
+
 
 ## 2. Pycharm 설치
 
