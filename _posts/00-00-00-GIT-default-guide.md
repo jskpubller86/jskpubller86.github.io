@@ -1,11 +1,10 @@
 ---
-title :  GIT 기본 가이드
-date : 2025-07-16
-categories : git
+title: GIT 기본 가이드
+date: 2025-07-16
+categories: git
 ---
 
 깃에 기본 흐름에 대해서 살펴보자.
-
 
 ## 1. 프로젝트 파일 생성
 
@@ -52,7 +51,7 @@ $ git config get user.name # user.name 정보를 볼 수 있다. 즉 특정 속�
 jskpu
 ##
 $ git config set user.name aaa # user.name 의 값을 aaa 변경한다.
-$ git config get user.name 
+$ git config get user.name
 ## 출력
 aaa
 ##
@@ -61,6 +60,7 @@ $ git config --show-origin user.name ## 설정 정보가 시스템, 로컬, 현�
 file:.git/config        aaa
 ##
 ```
+
 user.name과 user.email은 정보는 꼭 설정해주자.
 
 참고로 한번 커밋하면 설정은 변경할 수 없다.
@@ -82,15 +82,16 @@ $ git remote rename second third # 원격지 second 이름을 third로 변경
 $ git remote rm third # 원격지 third 삭제
 $ git remote -v # 저장된 모든 원격지 저장소를 보여줌
 $ git remote show origin # origin 저장소 정보를 상세히 보여준
-$ git push -u origin main # -u 옵션은 origin을 기본 원격지로 설정하고 main 브랜치가 없으면 생성, 다음부터 git push로만 수행가능 
+$ git push -u origin main # -u 옵션은 origin을 기본 원격지로 설정하고 main 브랜치가 없으면 생성, 다음부터 git push로만 수행가능
 ```
+
 `[git push -u origin main]` 명령어를 수행하면 SignIn 화면이 나올 것이다.
 
 SignIn하면 GitHub의 A라는 저장소에 파일이 업로드 된 것을 확인할 수 있다.
 
 ## 4. 스냅샷과 커밋 그리고 태그
 
-깃은 스냅샷을 커밋한다. 
+깃은 스냅샷을 커밋한다.
 
 그래서 작업한 후 변경사항을 스냅샷으로 만들어야 한다.
 
@@ -106,7 +107,7 @@ $ git status -s # 스냅샷 여부를 짧게 확인
 
 `git add`로 스냅샷을 만들면 이제 커밋을 할 수 있다.
 
-반대로 스냅샷을 취소할 수 있다. 
+반대로 스냅샷을 취소할 수 있다.
 
 ```sh
 $ git reset # 스냅샷 취소
@@ -154,7 +155,7 @@ $ git log --grep="bug\|error" # 정규식 표현 사용
 $ git log -S"password" # 변경 내용에 password가 들어간 커밋 보기
 $ git log --author="Han" # 커밋 소유자의 이름이나 메일을 검색해서 보기
 $ git log --author="kim" --grep="fix" --all-match # 소유자와 메세지 둘다 만족하는 커밋 보기
-$ git log --author="kim" --grep="fix" --all-match # 소유자와 메세지 둘중 하나 만족하는 커밋 보기 
+$ git log --author="kim" --grep="fix" --all-match # 소유자와 메세지 둘중 하나 만족하는 커밋 보기
 $ git log --oneline --decorate --graph --all # 브랜치 별 분리된 커밋을 보여줌.
 ```
 
@@ -191,6 +192,13 @@ $ git merge origin/main # origin/main을 현 브랜치에 병합
 그러고 나서 다음 명령어로 확인한다.
 
 ```sh
+# 특정 파일의 변경사항 확인
+$ git diff GIT-default-guide
+# 특적 키워드로 변경사항 확인
+$ git diff GIT-default-guide | findstr "keyword"
+```
+
+```sh
 $ git diff
 ## 출력
 diff --git a/README.md b/README.md
@@ -209,12 +217,15 @@ index d4f6232..486dfdb 100644
 `git diff`는 현재 작업과 스냅샷을 비교한다. 만약 스냅샷이 없다면 최근 커밋의 스냅샷과 비교한다.
 
 만약 최근 커밋과 스냅샷을 비교하려고 하면 다음과 같이 한다.
+
 ```sh
 $ git diff --cached # 최근 커밋과 스냅샷(스테이징)을 비교
 ```
-## 7. 브랜치 
+
+## 7. 브랜치
 
 브랜치는 작업 영역을 분리한다.
+
 ```sh
 $ git branch # 브랜치 목록 확인
 $ git branch sub # 브랜치로 생성

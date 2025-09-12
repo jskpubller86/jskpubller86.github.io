@@ -1,7 +1,7 @@
 ---
-title : docker의 기본 가이드
-data : 2025-07-16
-categories : docker
+title: docker의 기본 가이드
+data: 2025-07-16
+categories: docker
 tags: docker default guide
 ---
 
@@ -20,7 +20,6 @@ $ docker stop  <container id>
 $ docker exec -it <[docker's id | docker's name]> /bin/bash # 실행 중인 도커에 접속
 $ docker exec -it de8a5a0a07a8 /bin/bash # 실행 중인 도커 접속 예시
 ```
-
 
 ## 도커 로그인
 
